@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Question or idea
+    url: https://github.com/YOUR_USERNAME/chroma-forge/discussions
+    about: Ask anything color-related or propose features before opening an issue.
+  - name: 🌍 MCP server discovery
+    url: https://smithery.ai
+    about: Looking for an MCP server? Check the live registries first (also linked in mcp/README.md).

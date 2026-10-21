@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+*.swp
+
+# Node (only needed if you extend the MCP server)
+node_modules/
+package-lock.json
+bun.lockb
+
+# Logs & env
+*.log
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/

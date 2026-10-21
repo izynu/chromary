@@ -1,0 +1,12 @@
+{
+  "name": "chroma-forge-mcp-example",
+  "version": "1.0.0",
+  "description": "Chroma Forge example MCP color server — palette generation + color identification tools for AI agents.",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
