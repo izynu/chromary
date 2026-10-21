@@ -43,6 +43,20 @@
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 28px; font-weight: 800; letter-spacing: .5px;
   }
+  .hero { display: block; margin-bottom: 26px; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 44px rgba(0,0,0,.5); }
+  .hero img { width: 100%; display: block; }
+  .cta { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .cta a {
+    display: inline-flex; align-items: center; height: 40px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+    font-size: 14px; font-weight: 600; padding: 0 16px; text-decoration: none;
+    transition: border-color .15s, transform .1s;
+  }
+  .cta a:hover { border-color: #3b4257; transform: translateY(-1px); }
+  .cta a.primary {
+    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2));
+    border-color: transparent; color: #fff;
+  }
   .logo-dot {
     width: 34px; height: 34px; border-radius: 10px;
     background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), #a855f7, var(--accent-3), var(--accent-4), var(--accent-1));
@@ -182,6 +196,11 @@
 <body>
 <div class="wrap">
 
+  <!-- ============ HERO (animated banner) ============ -->
+  <a class="hero" href="https://github.com/izynu/chromary" target="_blank" rel="noopener" aria-label="Chromary on GitHub">
+    <img src="banner-animated.svg" alt="Chromary — the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
+  </a>
+
   <header>
     <div class="logo"><span class="logo-dot"></span> <span class="grad-text">CHROMARY</span></div>
     <p class="sub">Live playground — zero dependencies, zero build. A taste of the full toolkit: 200+ resources, 6 AI-agent skills, MCP server, recipes.</p>
@@ -190,6 +209,10 @@
       <span class="badge"><b>6</b> agent skills</span>
       <span class="badge"><b>MCP</b> ready</span>
       <span class="badge"><b>9</b> recipes</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/izynu/chromary" target="_blank" rel="noopener">⭐ Star Chromary on GitHub</a>
+      <a class="btn ghost" href="https://github.com/izynu/chromary#readme" target="_blank" rel="noopener">📖 Read the full README</a>
     </div>
   </header>
 
