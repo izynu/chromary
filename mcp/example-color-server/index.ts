@@ -1,11 +1,11 @@
 /**
- * Chromary — example MCP color server (stdio transport).
+ * Chromary, example MCP color server (stdio transport).
  *
  *   cd mcp/example-color-server && bun install && bun run index.ts
  *
  * Exposes two tools to any MCP client (Claude Desktop, Cursor, VS Code…):
- *   • generate_palette — color-theory palette from a seed hex (The Color API)
- *   • color_info       — name / rgb / hsl / closest named match for a hex
+ *   • generate_palette, color-theory palette from a seed hex (The Color API)
+ *   • color_info      , name / rgb / hsl / closest named match for a hex
  *
  * Extend it: add a schema in ListToolsRequestSchema + a branch in
  * CallToolRequestSchema. See mcp/README.md for 5-minute tool ideas.

@@ -3,9 +3,9 @@ name: gradient-smith
 description: Create smooth, perceptual CSS gradients with no gray dead zones. Handles linear, radial, conic, mesh and grainy gradients interpolated in OKLab/OKLCH. Use when the user asks for a gradient, says their gradient looks muddy or gray in the middle, or wants modern CSS gradient code.
 ---
 
-# 🌈 Gradient Smith
+# Gradient Smith
 
-Gradients that stay vivid from stop to stop — because they're interpolated in a perceptual space, not sRGB.
+Gradients that stay vivid from stop to stop, because they're interpolated in a perceptual space, not sRGB.
 
 ## When to use
 - "Make a gradient from X to Y" / hero backgrounds / buttons / borders
@@ -30,9 +30,9 @@ Gradients that stay vivid from stop to stop — because they're interpolated in 
 | Big hue sweep, keep punch | `linear-gradient(in oklch longer hue, gold, dodgerblue)` or add midpoint stops |
 | Radial glow | `radial-gradient(in oklab, oklch(80% .15 150 / .9), transparent 70%)` |
 | Angular / conic wheel | `conic-gradient(in oklch longer hue, red, red)` (hue wheel, constant L/C) |
-| Mesh hero | 3–5 layered radial-gradients + base color (see recipe) |
-| Kill banding | overlay `feTurbulence` SVG noise at 4–8% opacity |
-| Animate cheaply | `@property --angle` + rotate a conic; or translate an oversized gradient layer — never animate `filter: blur()` on large areas |
+| Mesh hero | 3 to 5 layered radial-gradients + base color (see recipe) |
+| Kill banding | overlay `feTurbulence` SVG noise at 4 to 8% opacity |
+| Animate cheaply | `@property --angle` + rotate a conic; or translate an oversized gradient layer, never animate `filter: blur()` on large areas |
 
 ## Hard gates
 - **Never interpolate brand-to-brand hues in raw sRGB** when `in oklab` is one keyword away.
@@ -41,11 +41,11 @@ Gradients that stay vivid from stop to stop — because they're interpolated in 
 - No gradient-on-gradient-on-gradient soup: max 2 competing gradient layers per section (texture overlays don't count).
 
 ## Output format
-A single copy-paste CSS block (with the `in oklab/oklch` keywords) + one line naming the interpolation space and why + any midpoint stops you added and why.
+A single copy paste CSS block (with the `in oklab/oklch` keywords) + one line naming the interpolation space and why + any midpoint stops you added and why.
 
 ## Example
 User: "yellow → blue gradient keeps turning green-gray."
 → `linear-gradient(in oklab, oklch(90% .18 95), oklch(65% .17 250))`; if a dull middle persists, insert `oklch(78% .16 170 / 1) 50%`. Report: interpolated in OKLab, midpoint added to preserve chroma; white text passes only over the left 40% → recommended scrim.
 
 ---
-*Part of [🎨 Chromary](../../README.md) · deep dive: [07 · CSS gradients](../../docs/07-css-gradients.md) · recipe: [gradient-interpolation.js](../../recipes/javascript/gradient-interpolation.js)*
+*Part of [Chromary](../../README.md) · deep dive: [07 · CSS gradients](../../docs/07-css-gradients.md) · recipe: [gradient-interpolation.js](../../recipes/javascript/gradient-interpolation.js)*

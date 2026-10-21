@@ -1,11 +1,11 @@
 """
-scientific-colormaps.py — publication-grade plots with Crameri's scientific colour maps.
+scientific-colormaps.py, publication-grade plots with Crameri's scientific colour maps.
 
 Dep:  pip install matplotlib cmcrameri numpy
 Run:  python scientific-colormaps.py          (writes colormaps.png)
 
 Why: perceptually uniform, CVD-safe, and print-safe. Cite Crameri, Shephard &
-Heron (2020, Nature Communications) if your figures ship — reviewers love it.
+Heron (2020, Nature Communications) if your figures ship, reviewers love it.
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -29,4 +29,4 @@ for ax, (cmap, title, vlim) in zip(axes, PANELS):
     fig.colorbar(im, ax=ax, shrink=0.85)
 
 fig.savefig("colormaps.png", dpi=200)
-print("wrote colormaps.png — squint test: does the pattern survive the blur? It should.")
+print("wrote colormaps.png, squint test: does the pattern survive the blur? It should.")

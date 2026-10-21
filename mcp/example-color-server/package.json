@@ -1,7 +1,7 @@
 {
   "name": "chromary-mcp-example",
   "version": "1.0.0",
-  "description": "Chromary example MCP color server — palette generation + color identification tools for AI agents.",
+  "description": "Chromary example MCP color server, palette generation + color identification tools for AI agents.",
   "type": "module",
   "scripts": {
     "start": "bun run index.ts"

@@ -1,5 +1,5 @@
 ---
-name: 🐛 Bug report (broken link, wrong formula, bad snippet)
+name:  Bug report (broken link, wrong formula, bad snippet)
 about: Something in the repo is factually wrong or broken
 labels: bug
 ---

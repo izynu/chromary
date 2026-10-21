@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Chromary — color MCP server registry",
+  "title": "Chromary, color MCP server registry",
   "description": "Community-verified color-related MCP servers. Add yours via PR: append an entry, keep fields exact. Verify third-party servers before running them.",
   "updated": "2026-10-21",
   "servers": [
     {
       "name": "chromary-example",
-      "description": "Palette generation (color-theory modes) + color identification via The Color API. Ships with the repo — extend it freely.",
+      "description": "Palette generation (color-theory modes) + color identification via The Color API. Ships with the repo, extend it freely.",
       "transport": "stdio",
       "runtime": "bun",
       "source": "./example-color-server/index.ts",

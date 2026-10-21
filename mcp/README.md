@@ -1,8 +1,8 @@
-# 🔌 Chromary — MCP Registry
+# Chromary, MCP Registry
 
-**MCP (Model Context Protocol)** lets AI agents call tools through a standard interface — schema'd, discoverable, no hallucinated endpoints. Wrap color APIs as MCP tools and your agent stops *guessing* hex codes and starts *computing* them.
+**MCP (Model Context Protocol)** lets AI agents call tools through a standard interface, schema'd, discoverable, no hallucinated endpoints. Wrap color APIs as MCP tools and your agent stops *guessing* hex codes and starts *computing* them.
 
-## 🚀 The starter server (in this repo)
+## The starter server (in this repo)
 
 [`example-color-server/`](example-color-server/index.ts) is a complete, working MCP server (TypeScript, runs on [Bun](https://bun.sh)) exposing two tools:
 
@@ -17,10 +17,10 @@ bun install
 bun run index.ts          # starts on stdio
 ```
 
-## 🔗 Wire it into your agent
+## Wire it into your agent
 
 <details open>
-<summary><b>Claude Desktop</b> — <code>claude_desktop_config.json</code></summary>
+<summary><b>Claude Desktop</b>, <code>claude_desktop_config.json</code></summary>
 
 ```json
 {
@@ -35,7 +35,7 @@ bun run index.ts          # starts on stdio
 </details>
 
 <details>
-<summary><b>Cursor</b> — <code>.cursor/mcp.json</code></summary>
+<summary><b>Cursor</b>, <code>.cursor/mcp.json</code></summary>
 
 ```json
 {
@@ -50,7 +50,7 @@ bun run index.ts          # starts on stdio
 </details>
 
 <details>
-<summary><b>VS Code</b> — <code>.vscode/mcp.json</code></summary>
+<summary><b>VS Code</b>, <code>.vscode/mcp.json</code></summary>
 
 ```json
 {
@@ -67,20 +67,20 @@ bun run index.ts          # starts on stdio
 
 **Test it:** `bunx @modelcontextprotocol/inspector bun run index.ts` → opens a UI to call your tools interactively.
 
-## 🌍 Community registry
+## Community registry
 
-> ⚠️ The MCP ecosystem moves *fast* — servers appear weekly. The canonical source of truth is always the live registries: **[Smithery](https://smithery.ai)**, **[Glama](https://glama.ai/mcp/servers)**, **[PulseMCP](https://www.pulsemcp.com)**, **[mcp.so](https://mcp.so)**. Search "color", "palette", "design". Verify any third-party server before running it.
+> The MCP ecosystem moves *fast*, servers appear weekly. The canonical source of truth is always the live registries: **[Smithery](https://smithery.ai)**, **[Glama](https://glama.ai/mcp/servers)**, **[PulseMCP](https://www.pulsemcp.com)**, **[mcp.so](https://mcp.so)**. Search "color", "palette", "design". Verify any third-party server before running it.
 
 | Server (search the registries) | Capability | Notes |
 |---|---|---|
-| `chromary example` (this repo) | palette generation + color identification | you own the code — extend freely |
+| `chromary example` (this repo) | palette generation + color identification | you own the code, extend freely |
 | color-conversion MCPs | hex ↔ rgb ↔ hsl ↔ oklch conversions | great lightweight first tools |
 | palette-generation MCPs | The Color API / Colormind wrappers | check rate limits before shipping |
 | image-extraction MCPs | dominant colors from image URLs | pair with the `image-palette` skill |
 
-**Machine-readable version:** [`servers.json`](servers.json) — PR your server in (see format inside).
+**Machine-readable version:** [`servers.json`](servers.json), PR your server in (see format inside).
 
-## 🛠️ Add a tool to the starter (5 minutes)
+## Add a tool to the starter (5 minutes)
 
 Open `example-color-server/index.ts`, add a schema to `ListToolsRequestSchema`, and a branch in `CallToolRequestSchema`. Ideas:
 
@@ -89,4 +89,4 @@ Open `example-color-server/index.ts`, add a schema to `ListToolsRequestSchema`, 
 - `name_that_color(hex)` → color.pizza lookup
 
 ---
-*Part of [🎨 Chromary](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01-rest-apis-and-mcp.md)*
+*Part of [Chromary](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01-rest-apis-and-mcp.md)*

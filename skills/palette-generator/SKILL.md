@@ -3,9 +3,9 @@ name: palette-generator
 description: Generate beautiful, perceptually-uniform, accessible color palettes from a seed color, brand color, mood words, or context. Use when the user asks for a color palette, color scheme, brand colors, accent colors, UI colors, or colors that work together.
 ---
 
-# 🎨 Palette Generator
+# Palette Generator
 
-Build palettes that are *beautiful*, *perceptually uniform*, and *accessible by construction* — not lucky hex guesses.
+Build palettes that are *beautiful*, *perceptually uniform*, and *accessible by construction*, not lucky hex guesses.
 
 ## When to use
 - "Give me a palette / color scheme / brand colors"
@@ -16,7 +16,7 @@ Build palettes that are *beautiful*, *perceptually uniform*, and *accessible by 
 1. **Clarify the context** (one question max): UI? brand? data-viz? print? If unclear, default to **UI palette**.
 2. **Get a seed hue** `H`:
    - User gave a color → extract its OKLCH hue.
-   - Mood words → map: calm→180–210, trust→150–170, energy→25–45, luxury→280–320, nature→120–150, warm/friendly→20–50. (If no web tools available, approximate by name; the gate in step 5 protects quality.)
+   - Mood words → map: calm→180 to 210, trust→150 to 170, energy→25 to 45, luxury→280 to 320, nature→120 to 150, warm/friendly→20 to 50. (If no web tools available, approximate by name; the gate in step 5 protects quality.)
    - Optional API assist: `curl "https://www.thecolorapi.com/scheme?hex=<SEED>&mode=<MODE>&count=6"` with mode ∈ `analogic | complement | triad | quad | monochrome | analogic-complement`. Treat results as *candidates*, not gospel.
 3. **Choose a harmony** via the decision rules below; derive supporting hues in OKLCH hue space (rotate hue, keep L/C consistent).
 4. **Build the neutral ramp**: neutral hue = brand hue but with `C ≤ 0.03` (tinted grays feel premium; pure `#000/#fff` feel cheap).
@@ -37,7 +37,7 @@ Build palettes that are *beautiful*, *perceptually uniform*, and *accessible by 
 ## Hard gates (non-negotiable)
 - **Text pairs ≥ 4.5:1** (WCAG AA): primary-on-background, background-on-primary, every text/text pair in the output.
 - **Large text & UI borders ≥ 3:1.**
-- **Chroma budget for UI colors:** `0.06 ≤ C ≤ 0.16` at `L 0.55–0.75`. Above that, colors vibrate and clash with text.
+- **Chroma budget for UI colors:** `0.06 ≤ C ≤ 0.16` at `L 0.55 to 0.75`. Above that, colors vibrate and clash with text.
 - **Lightness ladder must be monotonic** (50 is lightest → 950 darkest, or state the inversion for dark mode).
 - **Never encode meaning by hue alone** (accessibility + CVD). Add lightness or icon differences.
 - If an APCA check is available (`apca-w3`), fine-tune body text to `Lc ≥ 75`.
@@ -51,11 +51,11 @@ Build palettes that are *beautiful*, *perceptually uniform*, and *accessible by 
    --text-strong: oklch(21% 0.03 340);
 3. Role table:          primary / primary-hover / surface / text / muted-text / accent / success / warning / danger
 ```
-Finish with one line: which pairs were checked and their ratios (e.g. "text #17100E on #FFD1E7 = 14.2:1 ✅").
+Finish with one line: which pairs were checked and their ratios (e.g. "text #17100E on #FFD1E7 = 14.2:1 ").
 
 ## Example
 User: *"palette for a yoga studio, calm and premium"*
-→ seed hue 170 (teal-green), analogic support at 150 & 195, chroma capped at 0.09, neutrals tinted with C 0.02 → output ramp `oklch(98% .012 170)` … `oklch(30% .05 170)`, accent `oklch(70% .1 85)` (warm sand), verified `text 30% on surface 98% = 12.8:1 ✅`.
+→ seed hue 170 (teal-green), analogic support at 150 & 195, chroma capped at 0.09, neutrals tinted with C 0.02 → output ramp `oklch(98% .012 170)` … `oklch(30% .05 170)`, accent `oklch(70% .1 85)` (warm sand), verified `text 30% on surface 98% = 12.8:1 `.
 
 ---
-*Part of [🎨 Chromary](../../README.md) · deep dive: [08 · AI palette generation](../../docs/08-ai-palette-generation.md)*
+*Part of [Chromary](../../README.md) · deep dive: [08 · AI palette generation](../../docs/08-ai-palette-generation.md)*

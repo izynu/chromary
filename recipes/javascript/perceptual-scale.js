@@ -1,11 +1,11 @@
 /**
- * perceptual-scale.js — build a Tailwind-style 50→950 brand scale from one hue.
+ * perceptual-scale.js, build a Tailwind-style 50→950 brand scale from one hue.
  *
  * Dep: bun add culori        Run: bun run perceptual-scale.js
  *
  * Why OKLCH? Lightness steps feel *even* to the eye, chroma can be shaped
  * independently (low at the extremes, peaking mid-scale), and every step
- * stays in gamut for CSS `oklch()` — no surprises between Figma and prod.
+ * stays in gamut for CSS `oklch()`, no surprises between Figma and prod.
  */
 import { oklch, formatHex } from "culori";
 
@@ -16,7 +16,7 @@ const LIGHTNESS = [0.975, 0.95, 0.9, 0.82, 0.71, 0.63, 0.55, 0.47, 0.38, 0.3, 0.
 const chromaAt = (t, peak) => 0.015 + (peak - 0.015) * Math.sin(Math.PI * t) ** 0.8;
 
 /**
- * @param {number} hue          OKLCH hue 0–360 (e.g. 160 teal, 25 orange, 300 violet)
+ * @param {number} hue          OKLCH hue 0 to 360 (e.g. 160 teal, 25 orange, 300 violet)
  * @param {number} [peak]       max chroma: 0.09 muted · 0.13 balanced · 0.18 vivid
  * @returns {Record<string, {oklch: string, hex: string}>}
  */

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Chromary, a working color library for AI agents.">
+  <defs>
+    <filter id="blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#202521" stop-opacity="0"/>
+      <stop offset="1" stop-color="#202521" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" fill="#202521"/>
+  <g filter="url(#blur)">
+    <circle cx="160" cy="85" r="125" fill="#225C48" opacity="0.55"/>
+    <circle cx="430" cy="245" r="125" fill="#C85B43" opacity="0.32"/>
+    <circle cx="710" cy="60" r="110" fill="#D9EF72" opacity="0.2"/>
+    <circle cx="970" cy="230" r="120" fill="#35695A" opacity="0.5"/>
+    <circle cx="1130" cy="70" r="90" fill="#C85B43" opacity="0.28"/>
+    <circle cx="870" cy="40" r="75" fill="#D9EF72" opacity="0.16"/>
+  </g>
+  <rect width="1200" height="320" fill="url(#fade)"/>
+  <text x="600" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="600" letter-spacing="16" fill="#F7F6F2">CHROMARY</text>
+  <rect x="470" y="162" width="260" height="3" fill="#D9EF72"/>
+  <text x="600" y="202" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#D8DBD0">A working color library for AI agents</text>
+  <text x="600" y="232" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#8B9186" letter-spacing="2">200+ RESOURCES · 6 AGENT SKILLS · 9 RECIPES · MCP READY</text>
+  <g>
+    <rect x="318" y="258" width="104" height="14" rx="4" fill="#225C48"/>
+    <rect x="434" y="258" width="104" height="14" rx="4" fill="#D9EF72"/>
+    <rect x="550" y="258" width="104" height="14" rx="4" fill="#C85B43"/>
+    <rect x="666" y="258" width="104" height="14" rx="4" fill="#F7F6F2"/>
+    <rect x="782" y="258" width="104" height="14" rx="4" fill="#35695A"/>
+  </g>
+</svg>

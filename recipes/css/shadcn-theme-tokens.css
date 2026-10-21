@@ -1,4 +1,4 @@
-/* shadcn-theme-tokens.css — complete semantic theme in OKLCH (light + dark).
+/* shadcn-theme-tokens.css, complete semantic theme in OKLCH (light + dark).
  *
  * Drop-in replacement for shadcn/ui's HSL variables. Token names follow the
  * shadcn convention so existing components keep working; values use oklch()

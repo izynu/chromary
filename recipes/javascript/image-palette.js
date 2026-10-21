@@ -1,9 +1,9 @@
 /**
- * image-palette.js — extract a role-based palette from any image.
+ * image-palette.js, extract a role-based palette from any image.
  *
  * Dep: bun add node-vibrant     Run: bun run image-palette.js ./logo.png
  *
- * node-vibrant returns *roles* (Vibrant, Muted, Dark/Light variants) —
+ * node-vibrant returns *roles* (Vibrant, Muted, Dark/Light variants):
  * far more useful for UIs than a raw dominant color. Normalize the results
  * in OKLCH before shipping (see the theme-builder skill).
  *

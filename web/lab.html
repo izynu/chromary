@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chromary — Chroma Lab</title>
-<meta name="description" content="The zero-dependency playground for Chromary: palette generator, WCAG contrast checker, perceptual gradient gallery." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f97316'/%3E%3Cstop offset='.5' stop-color='%23ec4899'/%3E%3Cstop offset='1' stop-color='%2322c55e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3C/svg%3E" />
+<title>Chromary, Chroma Lab</title>
+<meta name="description" content="The zero dependency playground for Chromary: palette generator, WCAG contrast checker, perceptual gradient gallery." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <style>
   :root {
     --bg: #0b0d12;
@@ -59,7 +59,7 @@
   }
   .logo-dot {
     width: 34px; height: 34px; border-radius: 10px;
-    background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), #a855f7, var(--accent-3), var(--accent-4), var(--accent-1));
+    background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), #f59e0b, var(--accent-3), var(--accent-4), var(--accent-1));
     box-shadow: 0 0 24px #ec489955;
   }
   .grad-text {
@@ -70,7 +70,7 @@
   .badges { display: flex; flex-wrap: wrap; gap: 8px; }
   .badge {
     font-size: 12.5px; font-weight: 600; color: var(--text-dim);
-    border: 1px solid var(--border); border-radius: 999px;
+    border: 1px solid var(--border); border-radius: 8px;
     padding: 4px 12px; background: var(--surface);
   }
   .badge b { color: var(--text); }
@@ -131,7 +131,7 @@
   .ratio-big { font-size: 44px; font-weight: 800; line-height: 1; }
   .pill {
     display: inline-block; font-size: 12.5px; font-weight: 700;
-    border-radius: 999px; padding: 4px 12px; margin: 4px 6px 0 0;
+    border-radius: 8px; padding: 4px 12px; margin: 4px 6px 0 0;
     background: var(--surface-2); border: 1px solid var(--border);
   }
   .pill.pass { color: #4ade80; border-color: #14532d55; }
@@ -198,12 +198,12 @@
 
   <!-- ============ HERO (animated banner) ============ -->
   <a class="hero" href="https://github.com/izynu/chromary" target="_blank" rel="noopener" aria-label="Chromary on GitHub">
-    <img src="banner-animated.svg" alt="Chromary — the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
+    <img src="banner-animated.svg" alt="Chromary, the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
   </a>
 
   <header>
     <div class="logo"><span class="logo-dot"></span> <span class="grad-text">CHROMARY</span></div>
-    <p class="sub">Live playground — zero dependencies, zero build. A taste of the full toolkit: 200+ resources, 6 AI-agent skills, MCP server, recipes.</p>
+    <p class="sub">Live playground, zero dependencies, zero build. A taste of the full toolkit: 200+ resources, 6 AI agent skills, MCP server, recipes.</p>
     <div class="badges">
       <span class="badge"><b>200+</b> resources</span>
       <span class="badge"><b>6</b> agent skills</span>
@@ -211,28 +211,28 @@
       <span class="badge"><b>9</b> recipes</span>
     </div>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/izynu/chromary" target="_blank" rel="noopener">⭐ Star Chromary on GitHub</a>
-      <a class="btn ghost" href="https://github.com/izynu/chromary#readme" target="_blank" rel="noopener">📖 Read the full README</a>
+      <a class="btn primary" href="https://github.com/izynu/chromary" target="_blank" rel="noopener"> Star Chromary on GitHub</a>
+      <a class="btn ghost" href="https://github.com/izynu/chromary#readme" target="_blank" rel="noopener"> Read the full README</a>
     </div>
   </header>
 
   <!-- ============ 1 · PALETTE GENERATOR ============ -->
   <section>
-    <h2><span class="n">01</span> 🎲 Palette Generator</h2>
-    <p class="desc">Pick a seed color and a harmony mode. Click any swatch to copy its hex. (Powered by color-theory math right here in your browser — the repo's skills do this plus WCAG gating.)</p>
+    <h2><span class="n">01</span> Palette Generator</h2>
+    <p class="desc">Pick a seed color and a harmony mode. Click any swatch to copy its hex. (Powered by color theory math right here in your browser, the repo's skills do this plus WCAG gating.)</p>
     <div class="card">
       <div class="controls">
         <label for="seed">Seed</label>
         <input type="color" id="seed" value="#0ea5a0" />
         <label for="mode">Harmony</label>
         <select id="mode">
-          <option value="analogic">Analogic — calm</option>
-          <option value="complement">Complement — bold</option>
-          <option value="triadic">Triadic — playful</option>
-          <option value="monochrome">Monochrome — minimal</option>
+          <option value="analogic">Analogic, calm</option>
+          <option value="complement">Complement, bold</option>
+          <option value="triadic">Triadic, playful</option>
+          <option value="monochrome">Monochrome, minimal</option>
         </select>
-        <button class="btn primary" id="gen">✨ Generate</button>
-        <button class="btn ghost" id="rand">🎲 Random</button>
+        <button class="btn primary" id="gen">Generate</button>
+        <button class="btn ghost" id="rand">Random</button>
       </div>
       <div class="swatches" id="swatches"></div>
     </div>
@@ -240,13 +240,13 @@
 
   <!-- ============ 2 · CONTRAST CHECKER ============ -->
   <section id="wcag">
-    <h2><span class="n">02</span> ♿ WCAG Contrast Checker</h2>
+    <h2><span class="n">02</span> WCAG Contrast Checker</h2>
     <p class="desc">Real WCAG 2.1 math, computed locally. Body text needs 4.5:1 (AA); large text and UI components need 3:1.</p>
     <div class="card contrast-grid">
       <div>
         <div class="row"><label for="fg">Text</label><input type="color" id="fg" value="#1f2937" /><code id="fgHex" style="font-size:13px">#1f2937</code></div>
         <div class="row"><label for="bg">Background</label><input type="color" id="bg" value="#f4f4f5" /><code id="bgHex" style="font-size:13px">#f4f4f5</code></div>
-        <div class="ratio-big" id="ratio">—</div>
+        <div class="ratio-big" id="ratio"></div>
         <div>
           <span class="pill" id="pillBody">AA body 4.5:1</span>
           <span class="pill" id="pillLarge">AA large 3:1</span>
@@ -255,28 +255,28 @@
       </div>
       <div class="preview" id="preview">
         <div class="large">Large heading preview</div>
-        <div class="small">Body text preview — the quick brown fox jumps over the lazy dog. 0123456789.</div>
+        <div class="small">Body text preview, the quick brown fox jumps over the lazy dog. 0123456789.</div>
       </div>
     </div>
   </section>
 
   <!-- ============ 3 · GRADIENT GALLERY ============ -->
   <section>
-    <h2><span class="n">03</span> 🌈 Perceptual Gradient Gallery</h2>
-    <p class="desc">Every gradient below interpolates in <code>oklab</code> / <code>oklch</code> — no gray dead zones. Copy the CSS straight into your project.</p>
+    <h2><span class="n">03</span> Perceptual Gradient Gallery</h2>
+    <p class="desc">Every gradient below interpolates in <code>oklab</code> / <code>oklch</code>, no gray dead zones. Copy the CSS straight into your project.</p>
     <div class="grad-grid" id="gradGrid"></div>
   </section>
 
   <!-- ============ 4 · SKILLS ============ -->
   <section>
-    <h2><span class="n">04</span> 🤖 Agent Skills</h2>
+    <h2><span class="n">04</span> Agent Skills</h2>
     <p class="desc">This playground is the shallow end. The repo ships six installable <code>SKILL.md</code> skills that give AI agents expert color abilities.</p>
     <div class="skill-grid" id="skillGrid"></div>
   </section>
 
   <footer>
-    <div>🎨 <b><a href="index.html" style="color:inherit;text-decoration:none">chromary</a></b> — the armory of color. Built for humans, tuned for agents.</div>
-    <div><a href="index.html">← Back to home</a> · <a href="https://github.com/izynu/chromary">GitHub repo</a> · <a href="https://github.com/izynu/chromary/blob/main/README.md">README</a> · <a href="https://github.com/izynu/chromary/blob/main/CONTRIBUTING.md">Contribute</a></div>
+    <div><b><a href="index.html" style="color:inherit;text-decoration:none">chromary</a></b>, the armory of color. Built for humans, tuned for agents.</div>
+    <div><a href="index.html">Back to home</a> · <a href="https://github.com/izynu/chromary">GitHub repo</a> · <a href="https://github.com/izynu/chromary/blob/main/README.md">README</a> · <a href="https://github.com/izynu/chromary/blob/main/CONTRIBUTING.md">Contribute</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
   </footer>
 </div>
 
@@ -296,7 +296,7 @@ function toast(msg) {
 }
 async function copy(text) {
   try { await navigator.clipboard.writeText(text); toast("copied ✓ " + text); }
-  catch { toast("copy failed — clipboard blocked"); }
+  catch { toast("copy failed, clipboard blocked"); }
 }
 function hexToRgb(hex) {
   const h = hex.replace("#", "");
@@ -415,12 +415,12 @@ function renderGradients() {
 
 /* ================= 4 · skills ================= */
 const SKILLS = [
-  { icon: "🎨", name: "palette-generator", desc: "Mood or seed → accessible, perceptually-uniform palette.", path: "skills/palette-generator/SKILL.md" },
-  { icon: "♿", name: "contrast-auditor", desc: "WCAG + APCA audit with minimal-distance auto-fix.", path: "skills/contrast-auditor/SKILL.md" },
-  { icon: "🏗️", name: "theme-builder", desc: "One color → full 50–950 scale + shadcn tokens.", path: "skills/theme-builder/SKILL.md" },
-  { icon: "📊", name: "dataviz-colormaps", desc: "Data type → scientifically correct colormap.", path: "skills/dataviz-colormaps/SKILL.md" },
-  { icon: "🌈", name: "gradient-smith", desc: "Perceptual gradients, zero gray dead zones.", path: "skills/gradient-smith/SKILL.md" },
-  { icon: "🖼️", name: "image-palette", desc: "Logo/photo → role-based brand tokens.", path: "skills/image-palette/SKILL.md" },
+  { name: "palette-generator", desc: "Mood or seed → accessible, perceptually-uniform palette.", path: "skills/palette-generator/SKILL.md" },
+  { name: "contrast-auditor", desc: "WCAG + APCA audit with minimal-distance auto-fix.", path: "skills/contrast-auditor/SKILL.md" },
+  { name: "theme-builder", desc: "One color → full 50 to 950 scale + shadcn tokens.", path: "skills/theme-builder/SKILL.md" },
+  { name: "dataviz-colormaps", desc: "Data type → scientifically correct colormap.", path: "skills/dataviz-colormaps/SKILL.md" },
+  { name: "gradient-smith", desc: "Perceptual gradients, zero gray dead zones.", path: "skills/gradient-smith/SKILL.md" },
+  { name: "image-palette", desc: "Logo/photo → role based brand tokens.", path: "skills/image-palette/SKILL.md" },
 ];
 function renderSkills() {
   $("#skillGrid").innerHTML = "";
@@ -428,7 +428,7 @@ function renderSkills() {
     const a = document.createElement("a");
     a.className = "skill";
     a.href = "https://github.com/izynu/chromary/blob/main/" + s.path;
-    a.innerHTML = `<div class="icon">${s.icon}</div><h3>${s.name}</h3><p>${s.desc}</p>`;
+    a.innerHTML = `<h3>${s.name}</h3><p>${s.desc}</p>`;
     $("#skillGrid").appendChild(a);
   });
 }

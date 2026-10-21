@@ -1,15 +1,15 @@
 /**
- * wcag-apca-contrast.js — WCAG 2.1 ratio + APCA (WCAG 3) Lc, one module.
+ * wcag-apca-contrast.js, WCAG 2.1 ratio + APCA (WCAG 3) Lc, one module.
  *
  * Dep: bun add apca-w3     Run: bun run wcag-apca-contrast.js
  *
  * WCAG 2.1 ratio is the legal AA/AAA standard; APCA predicts *perceived*
- * contrast far better — especially in dark mode and for thin fonts.
+ * contrast far better, especially in dark mode and for thin fonts.
  * Always report both.
  */
 import { calcAPCA } from "apca-w3";
 
-/** hex → [r,g,b] 0–1 */
+/** hex → [r,g,b] 0 to 1 */
 export function hexToRgb(hex) {
   const h = hex.replace("#", "");
   const n = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
@@ -40,7 +40,7 @@ export function verdict(fg, bg, { large = false } = {}) {
     ratio: +r.toFixed(2),
     wcag: r >= aaa ? "AAA ✓" : r >= aa ? "AA ✓" : "✗ fail",
     apcaLc: +lc.toFixed(1),
-    apcaNote: lc >= 75 ? "body-text ok" : lc >= 60 ? "large/fluent only" : lc >= 30 ? "non-text / UI only" : "invisible — do not use",
+    apcaNote: lc >= 75 ? "body-text ok" : lc >= 60 ? "large/fluent only" : lc >= 30 ? "non-text / UI only" : "invisible, do not use",
   };
 }
 

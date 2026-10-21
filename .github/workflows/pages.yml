@@ -1,4 +1,4 @@
-# Deploys web/index.html (the zero-dependency playground) to GitHub Pages.
+# Deploys web/index.html (the zero dependency playground) to GitHub Pages.
 # Enable once: repo Settings → Pages → Source → "GitHub Actions"
 #
 # NOTE: if a deploy ever fails, do NOT click "Re-run jobs" on the same run —

@@ -1,5 +1,5 @@
 /**
- * gradient-interpolation.js — gray-free color ramps, interpolated in OKLab.
+ * gradient-interpolation.js, gray-free color ramps, interpolated in OKLab.
  *
  * Dep: bun add culori      Run: bun run gradient-interpolation.js
  *
@@ -20,7 +20,7 @@ export function ramp(a, b, steps = 9, space = "oklab") {
   return Array.from({ length: steps }, (_, i) => formatHex(mix(a, b, space, i / (steps - 1))));
 }
 
-/** Average chroma magnitude of a ramp — the "dead zone detector". */
+/** Average chroma magnitude of a ramp, the "dead zone detector". */
 export function deadZoneScore(colors) {
   // proxy: count how many steps are near-gray (all channels within 4 of each other)
   const grayish = colors.filter((hex) => {

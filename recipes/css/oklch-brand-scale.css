@@ -1,4 +1,4 @@
-/* oklch-brand-scale.css — copy-paste OKLCH brand scale (hue 160, balanced).
+/* oklch-brand-scale.css, copy paste OKLCH brand scale (hue 160, balanced).
  *
  * Swap `160` for your brand hue and adjust the chroma curve.
  * Works in every modern browser. Fallback: generate hexes via
@@ -19,7 +19,7 @@
   --brand-900: oklch(30%   0.071 160);
   --brand-950: oklch(21%   0.051 160);  /* dark-mode surface */
 
-  /* semantic aliases — components should never touch raw steps */
+  /* semantic aliases, components should never touch raw steps */
   --color-primary: var(--brand-500);
   --color-primary-hover: var(--brand-600);
   --color-text-brand: var(--brand-700);   /* 4.5:1+ on white */
@@ -35,5 +35,5 @@
   }
 }
 
-/* Pro tip: steps are also handy as chart ramps — but check lightness spacing:
+/* Pro tip: steps are also handy as chart ramps, but check lightness spacing:
    equal L steps here are perceptually equal too. That's the OKLCH promise. */

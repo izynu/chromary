@@ -1,11 +1,11 @@
 """
-distinct-categorical-colors.py — N maximally-distinguishable categorical colors.
+distinct-categorical-colors.py, N maximally-distinguishable categorical colors.
 
 Dep:  pip install distinctipy matplotlib
 Run:  python distinct-categorical-colors.py
 
 Use for unordered classes (lines, clusters, labels) where hues must be
-told apart at a glance — including by readers with color-vision deficiency.
+told apart at a glance, including by readers with color-vision deficiency.
 """
 import distinctipy
 import matplotlib.pyplot as plt
