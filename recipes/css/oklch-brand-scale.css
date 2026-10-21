@@ -1,0 +1,39 @@
+/* oklch-brand-scale.css, copy paste OKLCH brand scale (hue 160, balanced).
+ *
+ * Swap `160` for your brand hue and adjust the chroma curve.
+ * Works in every modern browser. Fallback: generate hexes via
+ * recipes/javascript/perceptual-scale.js and use them as fallback lines.
+ */
+
+:root {
+  /* lightness ladder 50 → 950; chroma bell peaks mid-scale */
+  --brand-50:  oklch(97.5% 0.015 160);
+  --brand-100: oklch(95%   0.043 160);
+  --brand-200: oklch(90%   0.075 160);
+  --brand-300: oklch(82%   0.105 160);
+  --brand-400: oklch(71%   0.124 160);
+  --brand-500: oklch(63%   0.129 160);  /* primary actions */
+  --brand-600: oklch(55%   0.123 160);  /* hover (light mode) */
+  --brand-700: oklch(47%   0.110 160);  /* text-on-light that passes AA */
+  --brand-800: oklch(38%   0.090 160);
+  --brand-900: oklch(30%   0.071 160);
+  --brand-950: oklch(21%   0.051 160);  /* dark-mode surface */
+
+  /* semantic aliases, components should never touch raw steps */
+  --color-primary: var(--brand-500);
+  --color-primary-hover: var(--brand-600);
+  --color-text-brand: var(--brand-700);   /* 4.5:1+ on white */
+  --color-surface-brand: var(--brand-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--brand-400);        /* brighter primaries read better on dark */
+    --color-primary-hover: var(--brand-300);
+    --color-text-brand: var(--brand-300);     /* re-verified against dark surface */
+    --color-surface-brand: var(--brand-950);
+  }
+}
+
+/* Pro tip: steps are also handy as chart ramps, but check lightness spacing:
+   equal L steps here are perceptually equal too. That's the OKLCH promise. */

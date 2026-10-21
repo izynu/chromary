@@ -4,15 +4,15 @@
 
 ## The starter server (in this repo)
 
-[`examplecolorserver/`](examplecolorserver/index.ts) is a complete, working MCP server (TypeScript, runs on [Bun](https://bun.sh)) exposing two tools:
+[`example-color-server/`](example-color-server/index.ts) is a complete, working MCP server (TypeScript, runs on [Bun](https://bun.sh)) exposing two tools:
 
 | Tool | What it does |
-|||
-| `generate_palette` | Colortheory palette from a seed hex (`analogic`, `complement`, `triad`, `quad`, `monochrome`…) via The Color API |
+|---|---|
+| `generate_palette` | Color-theory palette from a seed hex (`analogic`, `complement`, `triad`, `quad`, `monochrome`…) via The Color API |
 | `color_info` | Identify any hex: name, RGB, HSL, closest named match |
 
 ```bash
-cd mcp/examplecolorserver
+cd mcp/example-color-server
 bun install
 bun run index.ts          # starts on stdio
 ```
@@ -27,7 +27,7 @@ bun run index.ts          # starts on stdio
   "mcpServers": {
     "chromary": {
       "command": "bun",
-      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/examplecolorserver/index.ts"]
+      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -42,7 +42,7 @@ bun run index.ts          # starts on stdio
   "mcpServers": {
     "chromary": {
       "command": "bun",
-      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/examplecolorserver/index.ts"]
+      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -58,7 +58,7 @@ bun run index.ts          # starts on stdio
     "chromary": {
       "type": "stdio",
       "command": "bun",
-      "args": ["run", "${workspaceFolder}/mcp/examplecolorserver/index.ts"]
+      "args": ["run", "${workspaceFolder}/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -69,24 +69,24 @@ bun run index.ts          # starts on stdio
 
 ## Community registry
 
-> The MCP ecosystem moves *fast*, servers appear weekly. The canonical source of truth is always the live registries: **[Smithery](https://smithery.ai)**, **[Glama](https://glama.ai/mcp/servers)**, **[PulseMCP](https://www.pulsemcp.com)**, **[mcp.so](https://mcp.so)**. Search "color", "palette", "design". Verify any thirdparty server before running it.
+> The MCP ecosystem moves *fast*, servers appear weekly. The canonical source of truth is always the live registries: **[Smithery](https://smithery.ai)**, **[Glama](https://glama.ai/mcp/servers)**, **[PulseMCP](https://www.pulsemcp.com)**, **[mcp.so](https://mcp.so)**. Search "color", "palette", "design". Verify any third-party server before running it.
 
 | Server (search the registries) | Capability | Notes |
-||||
+|---|---|---|
 | `chromary example` (this repo) | palette generation + color identification | you own the code, extend freely |
-| colorconversion MCPs | hex ↔ rgb ↔ hsl ↔ oklch conversions | great lightweight first tools |
-| palettegeneration MCPs | The Color API / Colormind wrappers | check rate limits before shipping |
-| imageextraction MCPs | dominant colors from image URLs | pair with the `imagepalette` skill |
+| color-conversion MCPs | hex ↔ rgb ↔ hsl ↔ oklch conversions | great lightweight first tools |
+| palette-generation MCPs | The Color API / Colormind wrappers | check rate limits before shipping |
+| image-extraction MCPs | dominant colors from image URLs | pair with the `image-palette` skill |
 
-**Machinereadable version:** [`servers.json`](servers.json), PR your server in (see format inside).
+**Machine-readable version:** [`servers.json`](servers.json), PR your server in (see format inside).
 
 ## Add a tool to the starter (5 minutes)
 
-Open `examplecolorserver/index.ts`, add a schema to `ListToolsRequestSchema`, and a branch in `CallToolRequestSchema`. Ideas:
+Open `example-color-server/index.ts`, add a schema to `ListToolsRequestSchema`, and a branch in `CallToolRequestSchema`. Ideas:
 
- `check_contrast(fg, bg)` → WCAG ratio + APCA Lc (port [`recipes/javascript/wcagapcacontrast.js`](../recipes/javascript/wcagapcacontrast.js))
- `oklch_convert(hex)` → OKLCH triple (port culori)
- `name_that_color(hex)` → color.pizza lookup
+- `check_contrast(fg, bg)` → WCAG ratio + APCA Lc (port [`recipes/javascript/wcag-apca-contrast.js`](../recipes/javascript/wcag-apca-contrast.js))
+- `oklch_convert(hex)` → OKLCH triple (port culori)
+- `name_that_color(hex)` → color.pizza lookup
 
-
-*Part of [Chromary](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01restapisandmcp.md)*
+---
+*Part of [Chromary](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01-rest-apis-and-mcp.md)*

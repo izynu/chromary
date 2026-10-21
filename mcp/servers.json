@@ -1,27 +1,27 @@
 {
-  "$schema": "https://jsonschema.org/draft/202012/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Chromary, color MCP server registry",
-  "description": "Communityverified colorrelated MCP servers. Add yours via PR: append an entry, keep fields exact. Verify thirdparty servers before running them.",
-  "updated": "20261021",
+  "description": "Community-verified color-related MCP servers. Add yours via PR: append an entry, keep fields exact. Verify third-party servers before running them.",
+  "updated": "2026-10-21",
   "servers": [
     {
-      "name": "chromaryexample",
-      "description": "Palette generation (colortheory modes) + color identification via The Color API. Ships with the repo, extend it freely.",
+      "name": "chromary-example",
+      "description": "Palette generation (color-theory modes) + color identification via The Color API. Ships with the repo, extend it freely.",
       "transport": "stdio",
       "runtime": "bun",
-      "source": "./examplecolorserver/index.ts",
+      "source": "./example-color-server/index.ts",
       "maintainer": "chromary",
       "status": "reference",
       "tools": ["generate_palette", "color_info"]
     },
     {
-      "name": "<addyourserverhere>",
-      "description": "Format: oneline what it does. Link the repo, list tool names, mark transport.",
-      "transport": "stdio|sse|streamablehttp",
+      "name": "<add-your-server-here>",
+      "description": "Format: one-line what it does. Link the repo, list tool names, mark transport.",
+      "transport": "stdio|sse|streamable-http",
       "runtime": "node|bun|python",
-      "source": "https://github.com/you/yourcolormcp",
+      "source": "https://github.com/you/your-color-mcp",
       "maintainer": "@you",
-      "status": "communityunverified",
+      "status": "community-unverified",
       "tools": ["tool_one", "tool_two"]
     }
   ],
