@@ -16,7 +16,6 @@
 [![Resources](https://img.shields.io/badge/resources-200%2B-225C48?style=flat-square)](#the-vault-16-deep-dive-guides)
 [![Agent Skills](https://img.shields.io/badge/agent_skills-6-225C48?style=flat-square)](./skills)
 [![MCP Ready](https://img.shields.io/badge/MCP ready-225C48?style=flat-square)](./mcp)
-[![Visitors](https://hits.sh/github.com/izynu/chromary.svg?style=flat-square&color=225C48)](https://github.com/izynu/chromary)
 
 **[Quickstart](#30-second-quickstart) · [Task Router](#find-what-you-need-in-5-seconds) · [The Vault](#the-vault-16-deep-dive-guides) · [Skills](#ai-agent-skills) · [MCP](#mcp-model-context-protocol) · [Playground](#live-playground)**
 
