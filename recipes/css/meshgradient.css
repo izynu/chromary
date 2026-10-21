@@ -1,0 +1,37 @@
+/* meshgradient.css, buttery mesh gradient, zero images, zero JS.
+ *
+ * Technique: 4 to 5 softedged radial gradients composited over a deep base.
+ * All interpolation stays in OKLab (inside each radial). Add the grain
+ * overlay below to eliminate banding on large surfaces.
+ */
+
+.mesh {
+  backgroundcolor: oklch(24% 0.05 280);            /* deep violetblack base */
+
+  backgroundimage:
+    radialgradient(at 18% 22%, oklch(72% 0.16 330 / 0.85) 0%, transparent 55%),
+    radialgradient(at 82% 16%, oklch(78% 0.14 85 / 0.75) 0%, transparent 50%),
+    radialgradient(at 72% 84%, oklch(66% 0.15 160 / 0.70) 0%, transparent 55%),
+    radialgradient(at 25% 78%, oklch(60% 0.12 250 / 0.65) 0%, transparent 50%),
+    radialgradient(at 55% 45%, oklch(85% 0.10 100 / 0.35) 0%, transparent 60%);
+
+  minheight: 100vh;
+}
+
+/*  grain overlay: kills banding, adds filmic texture  */
+.mesh::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointerevents: none;
+  opacity: 0.05;
+  backgroundimage: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  backgroundsize: 160px 160px;
+}
+
+/* Tuning cheatsheet
+ *  More hue variety → spread the four corner hues 60°+ apart in OKLCH.
+ *  Calmer mood      → drop chroma to ≤ 0.10 and opacity to 0.5 to 0.6.
+ *  Hero with text   → keep center lightness extreme (very dark or very light)
+ *                      so a scrimfree text region exists; verify 4.5:1 there.
+ */

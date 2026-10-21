@@ -1,208 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF8" />
+<meta name="viewport" content="width=devicewidth, initialscale=1.0" />
 <title>Chromary, Chroma Lab</title>
 <meta name="description" content="The zero dependency playground for Chromary: palette generator, WCAG contrast checker, perceptual gradient gallery." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <style>
   :root {
-    --bg: #0b0d12;
-    --surface: #12151d;
-    --surface-2: #1a1e2a;
-    --border: #262b3a;
-    --text: #e8ecf4;
-    --text-dim: #98a2b8;
-    --accent-1: #f97316;
-    --accent-2: #ec4899;
-    --accent-3: #22c55e;
-    --accent-4: #14b8a6;
-    --radius: 14px;
+    bg: #0b0d12;
+    surface: #12151d;
+    surface2: #1a1e2a;
+    border: #262b3a;
+    text: #e8ecf4;
+    textdim: #98a2b8;
+    accent1: #f97316;
+    accent2: #ec4899;
+    accent3: #22c55e;
+    accent4: #14b8a6;
+    radius: 14px;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  * { margin: 0; padding: 0; boxsizing: borderbox; }
+  html { scrollbehavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.55;
-    min-height: 100vh;
+    background: var(bg);
+    color: var(text);
+    fontfamily: systemui, applesystem, "Segoe UI", Roboto, sansserif;
+    lineheight: 1.55;
+    minheight: 100vh;
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 64px; }
+  .wrap { maxwidth: 1080px; margin: 0 auto; padding: 0 20px 64px; }
 
-  /* ---------- header ---------- */
+  /*  header  */
   header {
     padding: 56px 0 8px;
     display: flex;
-    flex-direction: column;
+    flexdirection: column;
     gap: 14px;
-    align-items: flex-start;
+    alignitems: flexstart;
   }
   .logo {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-size: 28px; font-weight: 800; letter-spacing: .5px;
+    display: inlineflex; alignitems: center; gap: 12px;
+    fontsize: 28px; fontweight: 800; letterspacing: .5px;
   }
-  .hero { display: block; margin-bottom: 26px; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 44px rgba(0,0,0,.5); }
+  .hero { display: block; marginbottom: 26px; borderradius: 18px; overflow: hidden; boxshadow: 0 12px 44px rgba(0,0,0,.5); }
   .hero img { width: 100%; display: block; }
-  .cta { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .cta { display: flex; gap: 10px; margintop: 16px; flexwrap: wrap; }
   .cta a {
-    display: inline-flex; align-items: center; height: 40px; border-radius: 10px;
-    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
-    font-size: 14px; font-weight: 600; padding: 0 16px; text-decoration: none;
-    transition: border-color .15s, transform .1s;
+    display: inlineflex; alignitems: center; height: 40px; borderradius: 10px;
+    border: 1px solid var(border); background: var(surface2); color: var(text);
+    fontsize: 14px; fontweight: 600; padding: 0 16px; textdecoration: none;
+    transition: bordercolor .15s, transform .1s;
   }
-  .cta a:hover { border-color: #3b4257; transform: translateY(-1px); }
+  .cta a:hover { bordercolor: #3b4257; transform: translateY(1px); }
   .cta a.primary {
-    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2));
-    border-color: transparent; color: #fff;
+    background: lineargradient(in oklab, var(accent1), var(accent2));
+    bordercolor: transparent; color: #fff;
   }
-  .logo-dot {
-    width: 34px; height: 34px; border-radius: 10px;
-    background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), #f59e0b, var(--accent-3), var(--accent-4), var(--accent-1));
-    box-shadow: 0 0 24px #ec489955;
+  .logodot {
+    width: 34px; height: 34px; borderradius: 10px;
+    background: conicgradient(from 180deg, var(accent1), var(accent2), #f59e0b, var(accent3), var(accent4), var(accent1));
+    boxshadow: 0 0 24px #ec489955;
   }
-  .grad-text {
-    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+  .gradtext {
+    background: lineargradient(in oklab, var(accent1), var(accent2) 50%, var(accent3));
+    webkitbackgroundclip: text; backgroundclip: text; color: transparent;
   }
-  header p.sub { color: var(--text-dim); max-width: 640px; }
-  .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  header p.sub { color: var(textdim); maxwidth: 640px; }
+  .badges { display: flex; flexwrap: wrap; gap: 8px; }
   .badge {
-    font-size: 12.5px; font-weight: 600; color: var(--text-dim);
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 4px 12px; background: var(--surface);
+    fontsize: 12.5px; fontweight: 600; color: var(textdim);
+    border: 1px solid var(border); borderradius: 8px;
+    padding: 4px 12px; background: var(surface);
   }
-  .badge b { color: var(--text); }
+  .badge b { color: var(text); }
 
-  /* ---------- sections ---------- */
-  section { margin-top: 48px; }
-  h2 { font-size: 21px; font-weight: 750; display: flex; align-items: center; gap: 10px; }
+  /*  sections  */
+  section { margintop: 48px; }
+  h2 { fontsize: 21px; fontweight: 750; display: flex; alignitems: center; gap: 10px; }
   h2 .n {
-    font-size: 12px; font-weight: 700; color: var(--text-dim);
-    border: 1px solid var(--border); border-radius: 8px; padding: 2px 8px;
-    background: var(--surface);
+    fontsize: 12px; fontweight: 700; color: var(textdim);
+    border: 1px solid var(border); borderradius: 8px; padding: 2px 8px;
+    background: var(surface);
   }
-  section > p.desc { color: var(--text-dim); margin: 6px 0 18px; max-width: 680px; }
+  section > p.desc { color: var(textdim); margin: 6px 0 18px; maxwidth: 680px; }
 
   .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px;
+    background: var(surface); border: 1px solid var(border);
+    borderradius: var(radius); padding: 20px;
   }
 
-  /* ---------- controls ---------- */
-  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .controls label { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+  /*  controls  */
+  .controls { display: flex; flexwrap: wrap; gap: 12px; alignitems: center; }
+  .controls label { fontsize: 13px; color: var(textdim); fontweight: 600; }
   input[type="color"] {
-    width: 46px; height: 40px; border: 1px solid var(--border); border-radius: 10px;
-    background: var(--surface-2); cursor: pointer; padding: 4px;
+    width: 46px; height: 40px; border: 1px solid var(border); borderradius: 10px;
+    background: var(surface2); cursor: pointer; padding: 4px;
   }
   select, button.btn {
-    height: 40px; border-radius: 10px; border: 1px solid var(--border);
-    background: var(--surface-2); color: var(--text);
-    font-size: 14px; font-weight: 600; padding: 0 14px; cursor: pointer;
-    transition: border-color .15s, transform .1s;
+    height: 40px; borderradius: 10px; border: 1px solid var(border);
+    background: var(surface2); color: var(text);
+    fontsize: 14px; fontweight: 600; padding: 0 14px; cursor: pointer;
+    transition: bordercolor .15s, transform .1s;
   }
-  select:hover, button.btn:hover { border-color: #3b4257; }
+  select:hover, button.btn:hover { bordercolor: #3b4257; }
   button.btn:active { transform: scale(.97); }
   button.btn.primary {
-    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2));
+    background: lineargradient(in oklab, var(accent1), var(accent2));
     border: none; color: #fff;
   }
   button.btn.ghost { background: transparent; }
 
-  /* ---------- palette ---------- */
-  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-top: 18px; }
+  /*  palette  */
+  .swatches { display: grid; gridtemplatecolumns: repeat(autofit, minmax(110px, 1fr)); gap: 10px; margintop: 18px; }
   .swatch {
-    border-radius: 12px; overflow: hidden; cursor: pointer;
-    border: 1px solid var(--border); transition: transform .15s;
+    borderradius: 12px; overflow: hidden; cursor: pointer;
+    border: 1px solid var(border); transition: transform .15s;
     animation: rise .35s both;
   }
-  .swatch:hover { transform: translateY(-3px); }
+  .swatch:hover { transform: translateY(3px); }
   .swatch .chip { height: 84px; }
-  .swatch .meta { padding: 8px 10px; background: var(--surface-2); }
-  .swatch .hex { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; font-weight: 700; }
-  .swatch .name { font-size: 11px; color: var(--text-dim); text-transform: capitalize; }
+  .swatch .meta { padding: 8px 10px; background: var(surface2); }
+  .swatch .hex { fontfamily: uimonospace, "SF Mono", Menlo, monospace; fontsize: 13px; fontweight: 700; }
+  .swatch .name { fontsize: 11px; color: var(textdim); texttransform: capitalize; }
   @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-  /* ---------- contrast ---------- */
-  .contrast-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
-  .row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .ratio-big { font-size: 44px; font-weight: 800; line-height: 1; }
+  /*  contrast  */
+  .contrastgrid { display: grid; gridtemplatecolumns: 1fr 1.4fr; gap: 20px; }
+  .row { display: flex; alignitems: center; gap: 12px; marginbottom: 12px; }
+  .ratiobig { fontsize: 44px; fontweight: 800; lineheight: 1; }
   .pill {
-    display: inline-block; font-size: 12.5px; font-weight: 700;
-    border-radius: 8px; padding: 4px 12px; margin: 4px 6px 0 0;
-    background: var(--surface-2); border: 1px solid var(--border);
+    display: inlineblock; fontsize: 12.5px; fontweight: 700;
+    borderradius: 8px; padding: 4px 12px; margin: 4px 6px 0 0;
+    background: var(surface2); border: 1px solid var(border);
   }
-  .pill.pass { color: #4ade80; border-color: #14532d55; }
-  .pill.fail { color: #f87171; border-color: #7f1d1d55; }
+  .pill.pass { color: #4ade80; bordercolor: #14532d55; }
+  .pill.fail { color: #f87171; bordercolor: #7f1d1d55; }
   .preview {
-    margin-top: 16px; border-radius: 12px; padding: 22px; border: 1px solid var(--border);
+    margintop: 16px; borderradius: 12px; padding: 22px; border: 1px solid var(border);
   }
-  .preview .large { font-size: 24px; font-weight: 750; }
-  .preview .small { font-size: 14px; margin-top: 6px; }
+  .preview .large { fontsize: 24px; fontweight: 750; }
+  .preview .small { fontsize: 14px; margintop: 6px; }
 
-  /* ---------- gradients ---------- */
-  .grad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .grad-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-  .grad-card .band { height: 110px; }
-  .grad-card .foot { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; gap: 8px; }
-  .grad-card code {
-    font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--text-dim);
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60%;
+  /*  gradients  */
+  .gradgrid { display: grid; gridtemplatecolumns: repeat(autofit, minmax(240px, 1fr)); gap: 14px; }
+  .gradcard { border: 1px solid var(border); borderradius: 12px; overflow: hidden; background: var(surface); }
+  .gradcard .band { height: 110px; }
+  .gradcard .foot { display: flex; justifycontent: spacebetween; alignitems: center; padding: 10px 12px; gap: 8px; }
+  .gradcard code {
+    fontfamily: uimonospace, Menlo, monospace; fontsize: 11px; color: var(textdim);
+    overflow: hidden; textoverflow: ellipsis; whitespace: nowrap; maxwidth: 60%;
   }
-  .grad-card button {
-    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
-    font-size: 12px; font-weight: 600; border-radius: 8px; padding: 5px 10px; cursor: pointer;
+  .gradcard button {
+    border: 1px solid var(border); background: var(surface2); color: var(text);
+    fontsize: 12px; fontweight: 600; borderradius: 8px; padding: 5px 10px; cursor: pointer;
   }
-  .grad-card button:hover { border-color: #3b4257; }
+  .gradcard button:hover { bordercolor: #3b4257; }
 
-  /* ---------- skills ---------- */
-  .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  /*  skills  */
+  .skillgrid { display: grid; gridtemplatecolumns: repeat(autofit, minmax(230px, 1fr)); gap: 14px; }
   .skill {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 16px; text-decoration: none; color: var(--text);
-    transition: transform .15s, border-color .15s;
+    background: var(surface); border: 1px solid var(border); borderradius: 12px;
+    padding: 16px; textdecoration: none; color: var(text);
+    transition: transform .15s, bordercolor .15s;
   }
-  .skill:hover { transform: translateY(-3px); border-color: #ec489966; }
-  .skill .icon { font-size: 24px; }
-  .skill h3 { font-size: 15px; margin: 8px 0 4px; }
-  .skill p { font-size: 12.5px; color: var(--text-dim); }
+  .skill:hover { transform: translateY(3px); bordercolor: #ec489966; }
+  .skill .icon { fontsize: 24px; }
+  .skill h3 { fontsize: 15px; margin: 8px 0 4px; }
+  .skill p { fontsize: 12.5px; color: var(textdim); }
 
-  /* ---------- footer ---------- */
+  /*  footer  */
   footer {
-    margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border);
-    display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
-    color: var(--text-dim); font-size: 13.5px;
+    margintop: 72px; paddingtop: 24px; bordertop: 1px solid var(border);
+    display: flex; flexwrap: wrap; gap: 12px; justifycontent: spacebetween;
+    color: var(textdim); fontsize: 13.5px;
   }
-  footer a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #3b4257; }
+  footer a { color: var(text); textdecoration: none; borderbottom: 1px dotted #3b4257; }
 
-  /* ---------- toast ---------- */
+  /*  toast  */
   #toast {
-    position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
-    background: #1c2230; color: var(--text); border: 1px solid #3b4257;
-    padding: 10px 18px; border-radius: 12px; font-size: 13.5px; font-weight: 600;
-    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
-    box-shadow: 0 10px 30px #0008;
+    position: fixed; left: 50%; bottom: 28px; transform: translateX(50%) translateY(20px);
+    background: #1c2230; color: var(text); border: 1px solid #3b4257;
+    padding: 10px 18px; borderradius: 12px; fontsize: 13.5px; fontweight: 600;
+    opacity: 0; pointerevents: none; transition: opacity .2s, transform .2s;
+    boxshadow: 0 10px 30px #0008;
   }
-  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  #toast.show { opacity: 1; transform: translateX(50%) translateY(0); }
 
-  @media (max-width: 720px) {
-    .contrast-grid { grid-template-columns: 1fr; }
-    header { padding-top: 36px; }
+  @media (maxwidth: 720px) {
+    .contrastgrid { gridtemplatecolumns: 1fr; }
+    header { paddingtop: 36px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- ============ HERO (animated banner) ============ -->
-  <a class="hero" href="https://github.com/izynu/chromary" target="_blank" rel="noopener" aria-label="Chromary on GitHub">
-    <img src="banner-animated.svg" alt="Chromary, the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
+  <! ============ HERO (animated banner) ============ >
+  <a class="hero" href="https://github.com/izynu/chromary" target="_blank" rel="noopener" arialabel="Chromary on GitHub">
+    <img src="banneranimated.svg" alt="Chromary, the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
   </a>
 
   <header>
-    <div class="logo"><span class="logo-dot"></span> <span class="grad-text">CHROMARY</span></div>
+    <div class="logo"><span class="logodot"></span> <span class="gradtext">CHROMARY</span></div>
     <p class="sub">Live playground, zero dependencies, zero build. A taste of the full toolkit: 200+ resources, 6 AI agent skills, MCP server, recipes.</p>
     <div class="badges">
       <span class="badge"><b>200+</b> resources</span>
@@ -216,7 +216,7 @@
     </div>
   </header>
 
-  <!-- ============ 1 · PALETTE GENERATOR ============ -->
+  <! ============ 1 · PALETTE GENERATOR ============ >
   <section>
     <h2><span class="n">01</span> Palette Generator</h2>
     <p class="desc">Pick a seed color and a harmony mode. Click any swatch to copy its hex. (Powered by color theory math right here in your browser, the repo's skills do this plus WCAG gating.)</p>
@@ -238,15 +238,15 @@
     </div>
   </section>
 
-  <!-- ============ 2 · CONTRAST CHECKER ============ -->
+  <! ============ 2 · CONTRAST CHECKER ============ >
   <section id="wcag">
     <h2><span class="n">02</span> WCAG Contrast Checker</h2>
     <p class="desc">Real WCAG 2.1 math, computed locally. Body text needs 4.5:1 (AA); large text and UI components need 3:1.</p>
-    <div class="card contrast-grid">
+    <div class="card contrastgrid">
       <div>
-        <div class="row"><label for="fg">Text</label><input type="color" id="fg" value="#1f2937" /><code id="fgHex" style="font-size:13px">#1f2937</code></div>
-        <div class="row"><label for="bg">Background</label><input type="color" id="bg" value="#f4f4f5" /><code id="bgHex" style="font-size:13px">#f4f4f5</code></div>
-        <div class="ratio-big" id="ratio"></div>
+        <div class="row"><label for="fg">Text</label><input type="color" id="fg" value="#1f2937" /><code id="fgHex" style="fontsize:13px">#1f2937</code></div>
+        <div class="row"><label for="bg">Background</label><input type="color" id="bg" value="#f4f4f5" /><code id="bgHex" style="fontsize:13px">#f4f4f5</code></div>
+        <div class="ratiobig" id="ratio"></div>
         <div>
           <span class="pill" id="pillBody">AA body 4.5:1</span>
           <span class="pill" id="pillLarge">AA large 3:1</span>
@@ -260,27 +260,27 @@
     </div>
   </section>
 
-  <!-- ============ 3 · GRADIENT GALLERY ============ -->
+  <! ============ 3 · GRADIENT GALLERY ============ >
   <section>
     <h2><span class="n">03</span> Perceptual Gradient Gallery</h2>
     <p class="desc">Every gradient below interpolates in <code>oklab</code> / <code>oklch</code>, no gray dead zones. Copy the CSS straight into your project.</p>
-    <div class="grad-grid" id="gradGrid"></div>
+    <div class="gradgrid" id="gradGrid"></div>
   </section>
 
-  <!-- ============ 4 · SKILLS ============ -->
+  <! ============ 4 · SKILLS ============ >
   <section>
     <h2><span class="n">04</span> Agent Skills</h2>
     <p class="desc">This playground is the shallow end. The repo ships six installable <code>SKILL.md</code> skills that give AI agents expert color abilities.</p>
-    <div class="skill-grid" id="skillGrid"></div>
+    <div class="skillgrid" id="skillGrid"></div>
   </section>
 
   <footer>
-    <div><b><a href="index.html" style="color:inherit;text-decoration:none">chromary</a></b>, the armory of color. Built for humans, tuned for agents.</div>
+    <div><b><a href="index.html" style="color:inherit;textdecoration:none">chromary</a></b>, the armory of color. Built for humans, tuned for agents.</div>
     <div><a href="index.html">Back to home</a> · <a href="https://github.com/izynu/chromary">GitHub repo</a> · <a href="https://github.com/izynu/chromary/blob/main/README.md">README</a> · <a href="https://github.com/izynu/chromary/blob/main/CONTRIBUTING.md">Contribute</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
   </footer>
 </div>
 
-<div id="toast" role="status" aria-live="polite">copied ✓</div>
+<div id="toast" role="status" arialive="polite">copied ✓</div>
 
 <script>
 "use strict";
@@ -306,15 +306,15 @@ function hexToRgb(hex) {
 function hslToHex(h, s, l) {
   s /= 100; l /= 100;
   const k = (n) => (n + h / 30) % 12;
-  const a = s * Math.min(l, 1 - l);
-  const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  const a = s * Math.min(l, 1  l);
+  const f = (n) => l  a * Math.max(1, Math.min(k(n)  3, Math.min(9  k(n), 1)));
   return "#" + [f(0), f(8), f(4)].map((v) => Math.round(v * 255).toString(16).padStart(2, "0")).join("");
 }
 const randomHue = () => Math.floor(Math.random() * 360);
 
 /* ================= 1 · palette ================= */
 const SCHEMES = {
-  analogic:   (h) => [h, h + 22, h - 22, h + 45, h - 45, h],
+  analogic:   (h) => [h, h + 22, h  22, h + 45, h  45, h],
   complement: (h) => [h, h, h + 180, h + 180, h + 15, h + 195],
   triadic:    (h) => [h, h + 120, h + 240, h, h + 120, h + 240],
   monochrome: (h) => [h, h, h, h, h, h],
@@ -327,12 +327,12 @@ const ROLES = ["primary", "deep", "tint", "anchor", "air", "ink"];
 function buildPalette() {
   const seedHue = hexToRgb($("#seed").value);
   const [r, g, b] = seedHue.map((v) => v / 255);
-  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max  min;
   let hue = 0;
   if (d) {
-    if (max === r) hue = ((g - b) / d) % 6;
-    else if (max === g) hue = (b - r) / d + 2;
-    else hue = (r - g) / d + 4;
+    if (max === r) hue = ((g  b) / d) % 6;
+    else if (max === g) hue = (b  r) / d + 2;
+    else hue = (r  g) / d + 4;
     hue = Math.round(hue * 60); if (hue < 0) hue += 360;
   }
   const hues = SCHEMES[$("#mode").value](hue);
@@ -347,7 +347,7 @@ function renderSwatches(list) {
     el.innerHTML = `<div class="chip" style="background:${c.hex}"></div>
       <div class="meta"><div class="hex">${c.hex}</div><div class="name">${c.role}</div></div>`;
     el.setAttribute("role", "button");
-    el.setAttribute("aria-label", "copy " + c.hex);
+    el.setAttribute("arialabel", "copy " + c.hex);
     el.addEventListener("click", () => copy(c.hex));
     $("#swatches").appendChild(el);
   });
@@ -369,7 +369,7 @@ function luminance(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 function ratio(fg, bg) {
-  const [hi, lo] = [luminance(fg), luminance(bg)].sort((a, b) => b - a);
+  const [hi, lo] = [luminance(fg), luminance(bg)].sort((a, b) => b  a);
   return (hi + 0.05) / (lo + 0.05);
 }
 function pill(el, pass, label) {
@@ -393,21 +393,21 @@ $("#bg").addEventListener("input", updateContrast);
 
 /* ================= 3 · gradients ================= */
 const GRADIENTS = [
-  { name: "Sunset no-mud", css: "linear-gradient(in oklab, oklch(75% 0.17 60), oklch(58% 0.2 330))" },
-  { name: "Teal→Violet sweep", css: "linear-gradient(in oklch longer hue, oklch(70% 0.15 180), oklch(60% 0.2 300))" },
-  { name: "Aurora", css: "linear-gradient(in oklab 120deg, oklch(65% 0.16 160), oklch(70% 0.14 240) 55%, oklch(75% 0.15 300))" },
-  { name: "Ember glow", css: "radial-gradient(in oklab at 30% 20%, oklch(80% 0.16 65 / .95), oklch(35% 0.1 30) 70%)" },
-  { name: "Cyan→Magenta", css: "linear-gradient(in oklab 90deg, oklch(72% 0.15 200), oklch(66% 0.22 350))" },
-  { name: "Full hue wheel", css: "conic-gradient(in oklch longer hue, oklch(70% 0.16 0), oklch(70% 0.16 360))" },
+  { name: "Sunset nomud", css: "lineargradient(in oklab, oklch(75% 0.17 60), oklch(58% 0.2 330))" },
+  { name: "Teal→Violet sweep", css: "lineargradient(in oklch longer hue, oklch(70% 0.15 180), oklch(60% 0.2 300))" },
+  { name: "Aurora", css: "lineargradient(in oklab 120deg, oklch(65% 0.16 160), oklch(70% 0.14 240) 55%, oklch(75% 0.15 300))" },
+  { name: "Ember glow", css: "radialgradient(in oklab at 30% 20%, oklch(80% 0.16 65 / .95), oklch(35% 0.1 30) 70%)" },
+  { name: "Cyan→Magenta", css: "lineargradient(in oklab 90deg, oklch(72% 0.15 200), oklch(66% 0.22 350))" },
+  { name: "Full hue wheel", css: "conicgradient(in oklch longer hue, oklch(70% 0.16 0), oklch(70% 0.16 360))" },
 ];
 function renderGradients() {
   $("#gradGrid").innerHTML = "";
   GRADIENTS.forEach((g) => {
     const el = document.createElement("div");
-    el.className = "grad-card";
+    el.className = "gradcard";
     el.innerHTML = `<div class="band" style="background:${g.css}"></div>
-      <div class="foot"><strong style="font-size:13px">${g.name}</strong></div>
-      <div class="foot" style="padding-top:0"><code>${g.css}</code><button>copy CSS</button></div>`;
+      <div class="foot"><strong style="fontsize:13px">${g.name}</strong></div>
+      <div class="foot" style="paddingtop:0"><code>${g.css}</code><button>copy CSS</button></div>`;
     el.querySelector("button").addEventListener("click", () => copy(g.css));
     $("#gradGrid").appendChild(el);
   });
@@ -415,12 +415,12 @@ function renderGradients() {
 
 /* ================= 4 · skills ================= */
 const SKILLS = [
-  { name: "palette-generator", desc: "Mood or seed → accessible, perceptually-uniform palette.", path: "skills/palette-generator/SKILL.md" },
-  { name: "contrast-auditor", desc: "WCAG + APCA audit with minimal-distance auto-fix.", path: "skills/contrast-auditor/SKILL.md" },
-  { name: "theme-builder", desc: "One color → full 50 to 950 scale + shadcn tokens.", path: "skills/theme-builder/SKILL.md" },
-  { name: "dataviz-colormaps", desc: "Data type → scientifically correct colormap.", path: "skills/dataviz-colormaps/SKILL.md" },
-  { name: "gradient-smith", desc: "Perceptual gradients, zero gray dead zones.", path: "skills/gradient-smith/SKILL.md" },
-  { name: "image-palette", desc: "Logo/photo → role based brand tokens.", path: "skills/image-palette/SKILL.md" },
+  { name: "palettegenerator", desc: "Mood or seed → accessible, perceptuallyuniform palette.", path: "skills/palettegenerator/SKILL.md" },
+  { name: "contrastauditor", desc: "WCAG + APCA audit with minimaldistance autofix.", path: "skills/contrastauditor/SKILL.md" },
+  { name: "themebuilder", desc: "One color → full 50 to 950 scale + shadcn tokens.", path: "skills/themebuilder/SKILL.md" },
+  { name: "datavizcolormaps", desc: "Data type → scientifically correct colormap.", path: "skills/datavizcolormaps/SKILL.md" },
+  { name: "gradientsmith", desc: "Perceptual gradients, zero gray dead zones.", path: "skills/gradientsmith/SKILL.md" },
+  { name: "imagepalette", desc: "Logo/photo → role based brand tokens.", path: "skills/imagepalette/SKILL.md" },
 ];
 function renderSkills() {
   $("#skillGrid").innerHTML = "";

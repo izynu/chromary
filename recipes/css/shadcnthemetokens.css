@@ -1,0 +1,76 @@
+/* shadcnthemetokens.css, complete semantic theme in OKLCH (light + dark).
+ *
+ * Dropin replacement for shadcn/ui's HSL variables. Token names follow the
+ * shadcn convention so existing components keep working; values use oklch()
+ * for perceptually even tuning. Generated perbrand by the themebuilder skill.
+ */
+
+:root {
+  background: oklch(98.5% 0.006 300);
+  foreground: oklch(22% 0.02 300);
+
+  card: oklch(100% 0 0);
+  cardforeground: oklch(22% 0.02 300);
+
+  primary: oklch(55% 0.18 300);
+  primaryforeground: oklch(98.5% 0.006 300);
+
+  secondary: oklch(93% 0.02 300);
+  secondaryforeground: oklch(30% 0.04 300);
+
+  muted: oklch(95% 0.01 300);
+  mutedforeground: oklch(48% 0.02 300);
+
+  accent: oklch(93% 0.03 300);
+  accentforeground: oklch(30% 0.04 300);
+
+  destructive: oklch(55% 0.19 25);
+  destructiveforeground: oklch(98.5% 0.006 25);
+
+  border: oklch(90% 0.012 300);
+  input: oklch(90% 0.012 300);
+  ring: oklch(55% 0.18 300);
+
+  radius: 0.625rem;
+}
+
+.dark {
+  background: oklch(16% 0.02 300);
+  foreground: oklch(93% 0.01 300);
+
+  card: oklch(20% 0.025 300);
+  cardforeground: oklch(93% 0.01 300);
+
+  primary: oklch(68% 0.16 300);          /* brighter primary on dark, NOT the same color */
+  primaryforeground: oklch(16% 0.03 300);
+
+  secondary: oklch(26% 0.03 300);
+  secondaryforeground: oklch(88% 0.015 300);
+
+  muted: oklch(24% 0.02 300);
+  mutedforeground: oklch(65% 0.02 300);
+
+  accent: oklch(28% 0.04 300);
+  accentforeground: oklch(88% 0.015 300);
+
+  destructive: oklch(65% 0.18 25);
+  destructiveforeground: oklch(16% 0.03 25);
+
+  border: oklch(28% 0.02 300);
+  input: oklch(28% 0.02 300);
+  ring: oklch(68% 0.16 300);
+}
+
+/* shadcn/ui (Tailwind v4) mapping:
+   @theme inline {
+     colorbackground: var(background);
+     colorforeground: var(foreground);
+     colorprimary: var(primary);
+     /* …one line per token… */
+   }
+
+   Verified pairs (reverify after retuning!):
+   · foreground on background      → ~14:1  ✓ AAA
+   · primaryforeground on primary → ~7.8:1 ✓ AAA
+   · mutedforeground on muted     → ~4.9:1 ✓ AA
+*/

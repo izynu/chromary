@@ -1,11 +1,11 @@
 # Deploys web/index.html (the zero dependency playground) to GitHub Pages.
 # Enable once: repo Settings → Pages → Source → "GitHub Actions"
 #
-# NOTE: if a deploy ever fails, do NOT click "Re-run jobs" on the same run —
-# re-running re-uploads the "github-pages" artifact and deploy-pages then
-# fails with "Multiple artifacts named github-pages (count is 2)".
-# Instead: push any new commit (fresh run = fresh artifacts) — or delete the
-# artifact from the failed run first, then re-run.
+# NOTE: if a deploy ever fails, do NOT click "Rerun jobs" on the same run 
+# rerunning reuploads the "githubpages" artifact and deploypages then
+# fails with "Multiple artifacts named githubpages (count is 2)".
+# Instead: push any new commit (fresh run = fresh artifacts)  or delete the
+# artifact from the failed run first, then rerun.
 name: Deploy playground to GitHub Pages
 
 on:
@@ -16,27 +16,27 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
+  idtoken: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancelinprogress: true
 
 jobs:
   deploy:
     environment:
-      name: github-pages
+      name: githubpages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runson: ubuntulatest
     steps:
-      - name: Checkout
+       name: Checkout
         uses: actions/checkout@v5
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload playground
-        uses: actions/upload-pages-artifact@v3
+       name: Setup Pages
+        uses: actions/configurepages@v5
+       name: Upload playground
+        uses: actions/uploadpagesartifact@v3
         with:
           path: web
-      - name: Deploy
+       name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploypages@v4

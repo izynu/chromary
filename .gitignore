@@ -9,7 +9,7 @@ desktop.ini
 
 # Node (only needed if you extend the MCP server)
 node_modules/
-package-lock.json
+packagelock.json
 bun.lockb
 
 # Logs & env
