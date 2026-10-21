@@ -1,39 +1,61 @@
-<!-- 🚀 PUBLISH TIP: after you create the GitHub repo, find & replace YOUR_USERNAME with your actual GitHub username. -->
-
 <div align="center">
 
-<img src="assets/banner.svg" alt="Chroma Forge — the ultimate color engineering toolkit" width="100%" />
+<!-- 🔥 Chroma Forge · maintained by @izynu (Zynu) · MIT -->
 
-# 🔥 Chroma Forge
+<img src="assets/banner-animated.svg" alt="Chroma Forge — animated banner. The most complete color engineering toolkit for humans, designers and AI agents." width="100%" />
 
-**The most complete color engineering toolkit on GitHub — for humans, designers & AI agents.**
+# 🔥 CHROMA FORGE
+
+<a href="https://github.com/izynu/chroma-forge/actions/workflows/pages.yml"><img src="https://github.com/izynu/chroma-forge/actions/workflows/pages.yml/badge.svg" alt="Playground deploy status" /></a>
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2800&pause=900&color=E8ECF4&center=true&vCenter=true&width=790&height=60&lines=The+most+complete+color+engineering+toolkit+on+GitHub;200%2B+resources+%C2%B7+16+deep-dive+guides+%C2%B7+9+recipes;6+AI-agent+skills+%C2%B7+MCP+server+%C2%B7+live+playground;Forged+for+humans+%E2%80%94+tuned+for+agents" alt="Animated tagline: the most complete color engineering toolkit on GitHub" />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](./LICENSE)
+[![Stars](https://img.shields.io/github/stars/izynu/chroma-forge?style=flat-square&color=f97316&logo=github)](https://github.com/izynu/chroma-forge/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ec4899?style=flat-square)](./CONTRIBUTING.md)
-[![Resources](https://img.shields.io/badge/resources-200%2B-f97316?style=flat-square)](#-the-vault)
+[![Resources](https://img.shields.io/badge/resources-200%2B-f97316?style=flat-square)](#%EF%B8%8F-the-vault)
 [![Agent Skills](https://img.shields.io/badge/agent_skills-6-a855f7?style=flat-square)](./skills)
 [![MCP Ready](https://img.shields.io/badge/MCP-ready-14b8a6?style=flat-square)](./mcp)
-[![Playground](https://img.shields.io/badge/playground-live-eab308?style=flat-square)](./web)
+[![Visitors](https://hits.sh/github.com/izynu/chroma-forge.svg?style=flat-square&color=eab308)](https://github.com/izynu/chroma-forge)
 
-**[200+ resources](#-the-vault) · [16 deep-dive guides](./docs) · [6 installable AI-agent skills](./skills) · [MCP server starter](./mcp) · [9 copy-paste recipes](./recipes) · [Live playground](./live-playground)**
-
-[Quickstart](#-30-second-quickstart) · [Task Router](#-find-what-you-need-in-5-seconds) · [The Vault](#-the-vault) · [Skills](#-ai-agent-skills) · [Roadmap](#-roadmap)
+**[⚡ Quickstart](#-30-second-quickstart) · [🧭 Task Router](#-find-what-you-need-in-5-seconds) · [🗺️ The Vault](#%EF%B8%8F-the-vault) · [🤖 Skills](#-ai-agent-skills) · [🔌 MCP](#-mcp--model-context-protocol) · [🎮 Playground](#-live-playground)**
 
 </div>
 
 ---
 
-## 🤔 What is this?
+> ### 🎨 One repo to rule every color decision.
+> **No more 40-tab chaos.** Chroma Forge fuses the entire color universe — APIs, perceptual color spaces, WCAG/APCA accessibility math, scientific colormaps, design-system scales, AI palette generators, MCP servers — into **16 deep-dive guides**, **6 installable AI-agent skills**, and a **live playground**. Your AI agent becomes a color engineer; you become unreasonably fast at color.
 
-Great color work is scattered across a hundred browser tabs: an API here, a WCAG calculator there, a colormap guide in a PDF from 2020. **Chroma Forge fuses all of it into one curated, opinionated, agent-ready hub:**
+| 🧭 | 🤖 | 🧪 |
+|:---:|:---:|:---:|
+| **Curated & opinionated** | **Agent-ready** | **Actually runnable** |
+| 200+ hand-picked resources, ⭐-rated with TL;DR tables and pitfalls in every guide | Drop-in `SKILL.md` skills + a working MCP server — agents don't memorize hex codes, they *compute* them | 9 copy-paste recipes + a zero-dependency playground. Every snippet tested, every claim sourced |
 
-- 🧭 **The Vault** — 200+ hand-picked tools, APIs, libraries, papers and standards, organized into **16 deep-dive guides**, each with a 🏆 TL;DR table and ⭐ ratings
-- 🤖 **Agent Skills** — 6 drop-in [`SKILL.md`](https://agent-skills.dev) skills that teach any AI agent (Claude Code, Cursor, Windsurf…) to generate palettes, audit contrast, build themes, and pick scientific colormaps
-- 🔌 **MCP-Ready** — a curated registry **plus a working [Model Context Protocol](https://modelcontextprotocol.io) server** so agents can call color APIs as native tools
-- 🧪 **Recipes** — 9 copy-paste JavaScript, Python and CSS snippets that just work (OKLCH scales, APCA contrast, mesh gradients…)
-- 🎮 **Live Playground** — a zero-dependency HTML demo: palette generator, contrast checker, gradient gallery (deployable to GitHub Pages in one click)
+## ⚡ 30-Second Quickstart
 
-> If this repo saves you a tab — or a hundred — consider giving it a ⭐.
+### 🧑‍🎨 Humans — just browse
+Open [The Vault](#%EF%B8%8F-the-vault) → pick a guide → use its **🏆 TL;DR** table. Five minutes, done.
+
+### 🤖 AI agents — install the skills
+```bash
+git clone https://github.com/izynu/chroma-forge.git
+mkdir -p .claude/skills
+cp -r chroma-forge/skills/* .claude/skills/
+```
+Works with Claude Code, Cursor, Windsurf and any `SKILL.md`-aware runtime. Global install: `~/.claude/skills/` instead.
+
+### 🔌 MCP — give your agent live color tools
+```bash
+cd chroma-forge/mcp/example-color-server
+bun install && bun run index.ts
+```
+
+### 🧪 Developers — steal a recipe
+```js
+// recipes/javascript/perceptual-scale.js — a Tailwind-grade OKLCH scale in ~10 lines
+import { oklch, formatHex } from "culori";
+```
 
 ## 🧭 Find what you need in 5 seconds
 
@@ -53,35 +75,7 @@ Great color work is scattered across a hundred browser tabs: an API here, a WCAG
 | Read the actual color science | [13 · Science & standards](docs/13-color-science-and-standards.md) | — |
 | Skim the vocabulary | [16 · Glossary](docs/16-glossary.md) | — |
 
-## ⚡ 30-Second Quickstart
-
-**🧑‍🎨 Humans** — browse [The Vault](#-the-vault), open a guide, use its 🏆 TL;DR table. Done.
-
-**🤖 AI agents** — install all 6 skills into Claude Code (or any `SKILL.md`-aware runtime):
-
-```bash
-git clone https://github.com/YOUR_USERNAME/chroma-forge.git
-mkdir -p .claude/skills
-cp -r chroma-forge/skills/* .claude/skills/
-```
-
-**🔌 MCP** — give your agent live color tools in one command:
-
-```bash
-cd chroma-forge/mcp/example-color-server
-bun install && bun run index.ts
-```
-
-**🧪 Developers** — steal a recipe:
-
-```js
-// recipes/javascript/perceptual-scale.js — an OKLCH scale in ~10 lines
-import { oklch, formatHex } from 'culori';
-```
-
-## 🗺️ The Vault
-
-Sixteen deep-dive guides. Every guide has a 🏆 TL;DR table, a full catalog with pro tips, pitfalls, and a runnable "try it now" snippet.
+## 🗺️ The Vault — 16 deep-dive guides
 
 | # | Guide | What's inside |
 |---|---|---|
@@ -102,9 +96,19 @@ Sixteen deep-dive guides. Every guide has a 🏆 TL;DR table, a full catalog wit
 | 15 | [🎯 Tool Selection Matrix](docs/15-tool-selection-matrix.md) | One giant table: task → first choice → alternative → skill → guide |
 | 16 | [📚 Glossary](docs/16-glossary.md) | Hue, chroma, gamut, metamerism, ΔE, Lc — everything in plain English |
 
+## 🏅 The Mount Rushmore — if you only click 5 links
+
+| # | Resource | Why it earns a face |
+|---|---|---|
+| 1 | [The Color API](https://www.thecolorapi.com) | Palettes + naming + conversions over one free GET — the workhorse of the whole repo |
+| 2 | [oklch.com](https://oklch.com) | The interactive OKLCH editor that permanently upgrades how you think about color |
+| 3 | [`apca-w3`](https://www.npmjs.com/package/apca-w3) | The WCAG 3 contrast math your dark mode has been begging for |
+| 4 | [Crameri scientific colour maps](https://www.fabiocrameri.ch/colourmaps/) | Perceptually uniform, CVD-safe, citation-ready — reviewers will thank you |
+| 5 | [Huemint](https://huemint.com) | ML palettes constrained by real layouts — generate colors that fit *your* design |
+
 ## 🤖 AI Agent Skills
 
-Each skill is a folder with a `SKILL.md` in the open agent-skills format: a YAML frontmatter (`name` + `description`) plus battle-tested instructions. Agents read the `description` to decide *when* to load the skill — so install them and just ask naturally.
+Each skill is a folder with a `SKILL.md` in the open agent-skills format: YAML frontmatter (`name` + `description`) plus battle-tested instructions with **hard gates** the agent may never skip. Agents read the `description` to decide *when* to load the skill — so just ask naturally.
 
 | Skill | Fire it when the user says… |
 |---|---|
@@ -115,8 +119,11 @@ Each skill is a folder with a `SKILL.md` in the open agent-skills format: a YAML
 | [`gradient-smith`](skills/gradient-smith/SKILL.md) | "make a gradient", "why is my gradient gray in the middle?" |
 | [`image-palette`](skills/image-palette/SKILL.md) | "extract colors from this logo/screenshot" |
 
+<details>
+<summary><b>📦 Install commands</b></summary>
+
 ```bash
-# per-project (recommended)
+# per-project (recommended — versioned with your repo)
 mkdir -p .claude/skills && cp -r skills/* .claude/skills/
 
 # global for every project
@@ -124,6 +131,7 @@ mkdir -p ~/.claude/skills && cp -r skills/* ~/.claude/skills/
 ```
 
 > 💡 **Anatomy of a good skill description:** *what it does* + *when to use it* + trigger keywords. That single line decides whether your agent finds it.
+</details>
 
 ## 🔌 MCP — Model Context Protocol
 
@@ -148,8 +156,6 @@ Give agents *live* color capabilities instead of memorized hex codes.
 
 ## 🧪 Recipes
 
-Battle-tested, dependency-light, copy-paste-ready.
-
 | Recipe | Lang | Superpower |
 |---|---|---|
 | [`perceptual-scale.js`](recipes/javascript/perceptual-scale.js) | JS | Tailwind-style 50–950 scale from one hue, in OKLCH |
@@ -166,12 +172,16 @@ Battle-tested, dependency-light, copy-paste-ready.
 
 [`web/index.html`](web/index.html) is a **single self-contained file** — no build, no npm, no framework:
 
-- 🎲 Palette generator (analogic / complement / triadic modes, click-to-copy swatches)
+- 🎲 Palette generator (analogic / complement / triadic / monochrome, click-to-copy swatches)
 - ♿ WCAG contrast checker with live AA/AAA verdicts
 - 🌈 Six perceptual gradient cards with copy-CSS buttons
 - 🤖 Cards linking to every agent skill
 
-**Deploy it free:** repo Settings → Pages → Source: **GitHub Actions** → done (the included [`.github/workflows/pages.yml`](.github/workflows/pages.yml) handles the rest).
+| | |
+|---|---|
+| <img src="assets/playground-hero.png" alt="Chroma Forge playground — palette generator and contrast checker" width="100%" /> | <img src="assets/playground-full.png" alt="Full Chroma Forge playground page" width="100%" /> |
+
+**Deploy your own copy free:** repo **Settings → Pages → Source: GitHub Actions** → the included [workflow](.github/workflows/pages.yml) publishes it automatically. ⚡ Or just open `web/index.html` locally — it works offline.
 
 ## ⭐ Rating Legend
 
@@ -183,7 +193,8 @@ Battle-tested, dependency-light, copy-paste-ready.
 | ★★ | Situational / legacy but useful |
 | ★ | Historical or niche, listed for completeness |
 
-## 🏗️ Repo Map
+<details>
+<summary><b>🏗️ Repo map</b></summary>
 
 ```text
 chroma-forge/
@@ -193,9 +204,10 @@ chroma-forge/
 ├── mcp/                      ← MCP registry + working example server
 ├── recipes/                  ← javascript/ · python/ · css/
 ├── web/                      ← zero-dependency live playground
-├── assets/                   ← banner & art
+├── assets/                   ← animated banner · playground screenshots
 └── .github/                  ← templates, funding, Pages workflow
 ```
+</details>
 
 ## 🗺️ Roadmap
 
@@ -206,11 +218,7 @@ chroma-forge/
 
 ## 🤝 Contributing
 
-PRs are extremely welcome — adding a resource takes 2 minutes. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the format (one table row + one catalog entry + a verified link), the rating rules, and how to propose a new skill.
-
-## 🛡️ Code of Conduct
-
-Be excellent to each other. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+PRs are extremely welcome — adding a resource takes 2 minutes. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the format (one table row + one catalog entry + a verified link), the rating rules, and how to propose a new skill. Be excellent to each other — see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## 📄 License
 
@@ -220,11 +228,24 @@ Be excellent to each other. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 Standing on the shoulders of giants: **Björn Ottosson** (OKLab/OKLCH), **Myndex** (APCA), **Fabio Crameri** (scientific colormaps), **Cynthia Brewer** (ColorBrewer), the maintainers of **culori, colorjs.io, chroma.js, coloraide**, the **Catppuccin / Nord / Dracula / Rosé Pine** theme teams, **Lospec**, and every palette nerd who ever argued about gray dead-zones.
 
+## ⭐ Star History
+
+<a href="https://star-history.com/#izynu/chroma-forge&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date" />
+ </picture>
+</a>
+
 ---
 
 <div align="center">
 
-<b>🔥 Chroma Forge</b> — forged for humans, tuned for agents.<br/>
-<sub>Made with ⚡ and 200+ tabs closed forever.</sub>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=110&color=0:f97316,50:ec4899,100:22c55e&section=footer" alt="wave divider" width="100%" />
+
+**🔥 CHROMA FORGE** — forged for humans, tuned for agents.
+
+Made with ⚡ by **[Zynu](https://github.com/izynu)** · *200+ tabs closed forever*
 
 </div>

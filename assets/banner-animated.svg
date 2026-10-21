@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Chroma Forge — animated banner: the ultimate color engineering toolkit for humans and AI agents">
+  <defs>
+    <filter id="blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316">
+        <animate attributeName="stop-color" values="#f97316;#ec4899;#a855f7;#14b8a6;#f97316" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#ec4899">
+        <animate attributeName="stop-color" values="#ec4899;#a855f7;#14b8a6;#f97316;#ec4899" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#a855f7">
+        <animate attributeName="stop-color" values="#a855f7;#14b8a6;#f97316;#ec4899;#a855f7" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" fill="#0b0d12"/>
+
+  <!-- drifting aurora blobs -->
+  <g filter="url(#blur)">
+    <circle cx="150" cy="80" r="120" fill="#f97316" opacity="0.45">
+      <animate attributeName="opacity" values="0.32;0.58;0.32" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="150;215;150" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="265" r="130" fill="#ec4899" opacity="0.4">
+      <animate attributeName="opacity" values="0.28;0.52;0.28" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="265;205;265" dur="19s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="60" r="110" fill="#22c55e" opacity="0.32">
+      <animate attributeName="opacity" values="0.22;0.46;0.22" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="680;635;680" dur="21s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="245" r="125" fill="#f59e0b" opacity="0.38">
+      <animate attributeName="opacity" values="0.28;0.52;0.28" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="245;185;245" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1130" cy="70" r="100" fill="#14b8a6" opacity="0.42">
+      <animate attributeName="opacity" values="0.32;0.56;0.32" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1130;1075;1130" dur="14s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- rising particles -->
+  <g fill="#ffffff">
+    <circle cx="230" cy="330" r="2" opacity="0">
+      <animate attributeName="cy" values="330;40" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="340" r="1.5" opacity="0">
+      <animate attributeName="cy" values="340;30" dur="22s" begin="-6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="22s" begin="-6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="810" cy="330" r="2.5" opacity="0">
+      <animate attributeName="cy" values="330;50" dur="18s" begin="-11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.65;0" dur="18s" begin="-11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="340" r="1.5" opacity="0">
+      <animate attributeName="cy" values="340;40" dur="20s" begin="-3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="20s" begin="-3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="70" cy="340" r="1.5" opacity="0">
+      <animate attributeName="cy" values="340;60" dur="24s" begin="-15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.45;0" dur="24s" begin="-15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- animated gradient title -->
+  <text x="600" y="152" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="78" font-weight="800" letter-spacing="6" fill="url(#titleGrad)">CHROMA FORGE</text>
+  <text x="600" y="198" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="21" fill="#e2e8f0">The most complete color engineering toolkit — for humans, designers &amp; AI agents</text>
+  <text x="600" y="230" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#94a3b8" letter-spacing="2">200+ RESOURCES · 6 AGENT SKILLS · MCP READY · 9 RECIPES · PLAYGROUND</text>
+
+  <!-- cycling palette strip -->
+  <g>
+    <rect x="300" y="262" width="100" height="14" rx="7" fill="#f97316">
+      <animate attributeName="fill" values="#f97316;#ec4899;#a855f7;#f97316" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="408" y="262" width="100" height="14" rx="7" fill="#ec4899">
+      <animate attributeName="fill" values="#ec4899;#a855f7;#22c55e;#ec4899" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="516" y="262" width="100" height="14" rx="7" fill="#a855f7">
+      <animate attributeName="fill" values="#a855f7;#22c55e;#14b8a6;#a855f7" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="624" y="262" width="100" height="14" rx="7" fill="#22c55e">
+      <animate attributeName="fill" values="#22c55e;#14b8a6;#f97316;#22c55e" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="732" y="262" width="100" height="14" rx="7" fill="#14b8a6">
+      <animate attributeName="fill" values="#14b8a6;#f97316;#ec4899;#14b8a6" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="840" y="262" width="100" height="14" rx="7" fill="#f59e0b">
+      <animate attributeName="fill" values="#f59e0b;#a855f7;#22c55e;#f59e0b" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
