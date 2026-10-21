@@ -49,4 +49,4 @@ Input: muted text `oklch(70% 0.02 260)` on `oklch(99% 0.01 260)`.
 → WCAG ≈ 2.6:1 ✗. Binary-search L while `C=0.02, h=260` → passes at `L ≈ 43%`. Output `oklch(43% 0.02 260)` → 7.1:1 ✓, APCA Lc ≈ 78 ✓. Hue untouched.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dive: [04 · Accessibility & Contrast](../../docs/04-accessibility-contrast.md)*
+*Part of [🎨 Chromary](../../README.md) · deep dive: [04 · Accessibility & Contrast](../../docs/04-accessibility-contrast.md)*

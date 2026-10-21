@@ -1,4 +1,4 @@
-# 🔌 Chroma Forge — MCP Registry
+# 🔌 Chromary — MCP Registry
 
 **MCP (Model Context Protocol)** lets AI agents call tools through a standard interface — schema'd, discoverable, no hallucinated endpoints. Wrap color APIs as MCP tools and your agent stops *guessing* hex codes and starts *computing* them.
 
@@ -25,9 +25,9 @@ bun run index.ts          # starts on stdio
 ```json
 {
   "mcpServers": {
-    "chroma-forge": {
+    "chromary": {
       "command": "bun",
-      "args": ["run", "/ABSOLUTE/PATH/TO/chroma-forge/mcp/example-color-server/index.ts"]
+      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -40,9 +40,9 @@ bun run index.ts          # starts on stdio
 ```json
 {
   "mcpServers": {
-    "chroma-forge": {
+    "chromary": {
       "command": "bun",
-      "args": ["run", "/ABSOLUTE/PATH/TO/chroma-forge/mcp/example-color-server/index.ts"]
+      "args": ["run", "/ABSOLUTE/PATH/TO/chromary/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -55,7 +55,7 @@ bun run index.ts          # starts on stdio
 ```json
 {
   "servers": {
-    "chroma-forge": {
+    "chromary": {
       "type": "stdio",
       "command": "bun",
       "args": ["run", "${workspaceFolder}/mcp/example-color-server/index.ts"]
@@ -73,7 +73,7 @@ bun run index.ts          # starts on stdio
 
 | Server (search the registries) | Capability | Notes |
 |---|---|---|
-| `chroma-forge example` (this repo) | palette generation + color identification | you own the code — extend freely |
+| `chromary example` (this repo) | palette generation + color identification | you own the code — extend freely |
 | color-conversion MCPs | hex ↔ rgb ↔ hsl ↔ oklch conversions | great lightweight first tools |
 | palette-generation MCPs | The Color API / Colormind wrappers | check rate limits before shipping |
 | image-extraction MCPs | dominant colors from image URLs | pair with the `image-palette` skill |
@@ -89,4 +89,4 @@ Open `example-color-server/index.ts`, add a schema to `ListToolsRequestSchema`, 
 - `name_that_color(hex)` → color.pizza lookup
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01-rest-apis-and-mcp.md)*
+*Part of [🎨 Chromary](../README.md) · deep dive: [01 · REST APIs & MCP](../docs/01-rest-apis-and-mcp.md)*

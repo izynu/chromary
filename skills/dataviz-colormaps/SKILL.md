@@ -54,4 +54,4 @@ User: heatmap of anomaly scores centered at 0.
 → diverging `vik`; midpoint neutral dark (works on both light/dark slides); colorbar ticks at −max/0/+max; grayscale-check passed; snippet: `plt.imshow(z, cmap='vik', vmin=-3, vmax=3)`.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dive: [06 · Data-viz colormaps](../../docs/06-data-visualization-colormaps.md)*
+*Part of [🎨 Chromary](../../README.md) · deep dive: [06 · Data-viz colormaps](../../docs/06-data-visualization-colormaps.md)*

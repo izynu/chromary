@@ -38,4 +38,4 @@ python recipes/python/scientific-colormaps.py
 - Contrast math is copied from the specs (WCAG 2.1 §1.4.3, APCA docs) — not vibes.
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

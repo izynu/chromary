@@ -48,4 +48,4 @@ User: "yellow → blue gradient keeps turning green-gray."
 → `linear-gradient(in oklab, oklch(90% .18 95), oklch(65% .17 250))`; if a dull middle persists, insert `oklch(78% .16 170 / 1) 50%`. Report: interpolated in OKLab, midpoint added to preserve chroma; white text passes only over the left 40% → recommended scrim.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dive: [07 · CSS gradients](../../docs/07-css-gradients.md) · recipe: [gradient-interpolation.js](../../recipes/javascript/gradient-interpolation.js)*
+*Part of [🎨 Chromary](../../README.md) · deep dive: [07 · CSS gradients](../../docs/07-css-gradients.md) · recipe: [gradient-interpolation.js](../../recipes/javascript/gradient-interpolation.js)*

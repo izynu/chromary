@@ -120,4 +120,4 @@ for (const hex of llmSays) {
 - [05 · Design Systems & Scales](05-design-systems-and-scales.md) — where validated palettes become tokens
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

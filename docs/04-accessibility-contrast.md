@@ -128,4 +128,4 @@ export function fixAA(hex, bg = '#ffffff', target = 4.5) {
 - [16 · Glossary](16-glossary.md) — Lc, JND, luminance vs lightness
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

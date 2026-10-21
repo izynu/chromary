@@ -117,4 +117,4 @@ plt.imshow([[0, 10, 20], [30, 40, 50]], cmap=cm.batlow); plt.colorbar(); plt.sho
 - [15 · Tool Selection Matrix](15-tool-selection-matrix.md) — "which colormap?" answered in one row
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

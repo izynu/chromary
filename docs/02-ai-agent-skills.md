@@ -12,7 +12,7 @@
 | **Progressive disclosure** | Description always in context; body loads on demand | Deep expertise without paying its token cost every message | ★★★★★ |
 | **Description engineering** | WHAT + WHEN + trigger keywords, ≤ ~1,024 chars | The *only* routing signal — nail it or the skill never fires | ★★★★★ |
 | **Hard gates** | Non-negotiable quality bars in the body | Stops agents from "almost" following your standards | ★★★★ |
-| **chroma-forge skills** | 6 installable color skills in this repo | Palettes, contrast, theming, colormaps, gradients, image extraction | ★★★★★ |
+| **chromary skills** | 6 installable color skills in this repo | Palettes, contrast, theming, colormaps, gradients, image extraction | ★★★★★ |
 
 ⭐ legend: ★★★★★ must-know · ★★★★ excellent · ★★★ situational · ★ niche · ★ historical.
 
@@ -122,4 +122,4 @@ EOF
 - [15 · Tool Selection Matrix](15-tool-selection-matrix.md) — skill vs MCP vs library, per scenario
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

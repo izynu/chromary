@@ -119,4 +119,4 @@ Steal Catppuccin Mocha, rename to semantic tokens:
 - [14 · Game & Pixel Palettes](14-game-and-pixel-palettes.md) — more curated palettes, retro division
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

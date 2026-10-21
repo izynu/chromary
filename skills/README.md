@@ -1,4 +1,4 @@
-# 🤖 Chroma Forge — Agent Skills
+# 🤖 Chromary — Agent Skills
 
 Six production-grade skills in the open [`SKILL.md`](https://agent-skills.dev) format. Drop them into any skills-aware agent (Claude Code, Cursor, Windsurf, custom runtimes) and it instantly gains expert-level color abilities.
 
@@ -7,11 +7,11 @@ Six production-grade skills in the open [`SKILL.md`](https://agent-skills.dev) f
 ```bash
 # Per-project (recommended — versioned with your repo)
 mkdir -p .claude/skills
-cp -r /path/to/chroma-forge/skills/* .claude/skills/
+cp -r /path/to/chromary/skills/* .claude/skills/
 
 # Global (available in every project)
 mkdir -p ~/.claude/skills
-cp -r /path/to/chroma-forge/skills/* ~/.claude/skills/
+cp -r /path/to/chromary/skills/* ~/.claude/skills/
 ```
 
 ## 🗂️ The lineup
@@ -34,4 +34,4 @@ The YAML `description` in each `SKILL.md` is a routing instruction: *what it doe
 Copy any skill folder as a starting point, keep the anatomy (When to use → Workflow → Decision rules → Hard gates → Output format → Example), and read [the Agent Skills guide](../docs/02-ai-agent-skills.md). PRs welcome — see [CONTRIBUTING](../CONTRIBUTING.md#-writing-a-new-agent-skill).
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

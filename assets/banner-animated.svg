@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Chroma Forge — animated banner: the ultimate color engineering toolkit for humans and AI agents">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Chromary — animated banner: the ultimate color engineering toolkit for humans and AI agents">
   <defs>
     <filter id="blur" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="55"/>
@@ -67,7 +67,7 @@
   </g>
 
   <!-- animated gradient title -->
-  <text x="600" y="152" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="78" font-weight="800" letter-spacing="6" fill="url(#titleGrad)">CHROMA FORGE</text>
+  <text x="600" y="152" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="78" font-weight="800" letter-spacing="16" fill="url(#titleGrad)">CHROMARY</text>
   <text x="600" y="198" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="21" fill="#e2e8f0">The most complete color engineering toolkit — for humans, designers &amp; AI agents</text>
   <text x="600" y="230" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#94a3b8" letter-spacing="2">200+ RESOURCES · 6 AGENT SKILLS · MCP READY · 9 RECIPES · PLAYGROUND</text>
 

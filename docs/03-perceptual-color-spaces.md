@@ -117,4 +117,4 @@
 - [16 · Glossary](16-glossary.md) — gamut, chroma, tone, JND — decoded
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

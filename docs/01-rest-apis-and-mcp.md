@@ -123,4 +123,4 @@ curl -s "https://www.thecolorapi.com/scheme?hex=264653&mode=triad&count=6" \
 - [16 · Glossary](16-glossary.md) — scheme modes and color-math terms, decoded
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

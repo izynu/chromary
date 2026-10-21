@@ -120,4 +120,4 @@
 - [02 · AI Agent Skills](02-ai-agent-skills.md) — the theme-builder skill operationalizes this guide
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

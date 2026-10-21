@@ -1,4 +1,4 @@
-# 🤝 Contributing to Chroma Forge
+# 🤝 Contributing to Chromary
 
 **Every contribution — even one fixed link — makes the toolkit better for everyone (humans and agents).** Thanks for being here. 💛
 
@@ -79,4 +79,4 @@
 Open a GitHub Discussion or an issue with the `question` label. No question too small — even "what's chroma?" counts.
 
 ---
-*Part of 🔥 Chroma Forge — forged for humans, tuned for agents.*
+*Part of 🎨 Chromary — the armory of color. Built for humans, tuned for agents.*

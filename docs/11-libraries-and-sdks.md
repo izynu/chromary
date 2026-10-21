@@ -162,4 +162,4 @@ console.log(ramp);
 - [15 · Tool Selection Matrix](15-tool-selection-matrix.md) — "choose a JS library" is row 12
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

@@ -55,4 +55,4 @@ Then a compact table mapping `50→950` steps → hex, and the 3 verified pairs 
 Seed `#7C3AED` → `oklch(53% 0.24 295)` → C_peak 0.24 is too hot for UI; cap at 0.18 → scale emitted with `--primary: oklch(55% 0.18 295)`, dark primary `oklch(68% 0.17 295)`, `primary-foreground` fixed at `oklch(15% 0.04 295)` → 8.1:1 ✓.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dives: [05 · Design systems](../../docs/05-design-systems-and-scales.md) · [03 · OKLCH](../../docs/03-perceptual-color-spaces.md)*
+*Part of [🎨 Chromary](../../README.md) · deep dives: [05 · Design systems](../../docs/05-design-systems-and-scales.md) · [03 · OKLCH](../../docs/03-perceptual-color-spaces.md)*

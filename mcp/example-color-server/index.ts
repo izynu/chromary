@@ -1,5 +1,5 @@
 /**
- * Chroma Forge — example MCP color server (stdio transport).
+ * Chromary — example MCP color server (stdio transport).
  *
  *   cd mcp/example-color-server && bun install && bun run index.ts
  *
@@ -53,7 +53,7 @@ async function colorInfo({ hex }) {
 }
 
 const server = new Server(
-  { name: "chroma-forge", version: "1.0.0" },
+  { name: "chromary", version: "1.0.0" },
   { capabilities: { tools: {} } },
 );
 
@@ -104,4 +104,4 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 
 await server.connect(new StdioServerTransport());
-console.error("🔥 chroma-forge MCP server running on stdio");
+console.error("🎨 chromary MCP server running on stdio");

@@ -119,4 +119,4 @@ for (const [role, swatch] of Object.entries(palette)) {
 - [08 · AI Palette Generation](08-ai-palette-generation.md) — use the extraction as the AI's seed
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

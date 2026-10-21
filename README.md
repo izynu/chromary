@@ -1,22 +1,22 @@
 <div align="center">
 
-<!-- 🔥 Chroma Forge · maintained by @izynu (Zynu) · MIT -->
+<!-- 🎨 Chromary · maintained by @izynu (Zynu) · MIT -->
 
-<img src="assets/banner-animated.svg" alt="Chroma Forge — animated banner. The most complete color engineering toolkit for humans, designers and AI agents." width="100%" />
+<img src="assets/banner-animated.svg" alt="Chromary — animated banner. The most complete color engineering toolkit for humans, designers and AI agents." width="100%" />
 
-# 🔥 CHROMA FORGE
+# 🎨 CHROMARY
 
-<a href="https://github.com/izynu/chroma-forge/actions/workflows/pages.yml"><img src="https://github.com/izynu/chroma-forge/actions/workflows/pages.yml/badge.svg" alt="Playground deploy status" /></a>
+<a href="https://github.com/izynu/chromary/actions/workflows/pages.yml"><img src="https://github.com/izynu/chromary/actions/workflows/pages.yml/badge.svg" alt="Playground deploy status" /></a>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2800&pause=900&color=E8ECF4&center=true&vCenter=true&width=790&height=60&lines=The+most+complete+color+engineering+toolkit+on+GitHub;200%2B+resources+%C2%B7+16+deep-dive+guides+%C2%B7+9+recipes;6+AI-agent+skills+%C2%B7+MCP+server+%C2%B7+live+playground;Forged+for+humans+%E2%80%94+tuned+for+agents" alt="Animated tagline: the most complete color engineering toolkit on GitHub" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2800&pause=900&color=E8ECF4&center=true&vCenter=true&width=790&height=60&lines=The+most+complete+color+engineering+toolkit+on+GitHub;200%2B+resources+%C2%B7+16+deep-dive+guides+%C2%B7+9+recipes;6+AI-agent+skills+%C2%B7+MCP+server+%C2%B7+live+playground;Built+for+humans+%E2%80%94+tuned+for+agents" alt="Animated tagline: the most complete color engineering toolkit on GitHub" />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](./LICENSE)
-[![Stars](https://img.shields.io/github/stars/izynu/chroma-forge?style=flat-square&color=f97316&logo=github)](https://github.com/izynu/chroma-forge/stargazers)
+[![Stars](https://img.shields.io/github/stars/izynu/chromary?style=flat-square&color=f97316&logo=github)](https://github.com/izynu/chromary/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ec4899?style=flat-square)](./CONTRIBUTING.md)
 [![Resources](https://img.shields.io/badge/resources-200%2B-f97316?style=flat-square)](#%EF%B8%8F-the-vault)
 [![Agent Skills](https://img.shields.io/badge/agent_skills-6-a855f7?style=flat-square)](./skills)
 [![MCP Ready](https://img.shields.io/badge/MCP-ready-14b8a6?style=flat-square)](./mcp)
-[![Visitors](https://hits.sh/github.com/izynu/chroma-forge.svg?style=flat-square&color=eab308)](https://github.com/izynu/chroma-forge)
+[![Visitors](https://hits.sh/github.com/izynu/chromary.svg?style=flat-square&color=eab308)](https://github.com/izynu/chromary)
 
 **[⚡ Quickstart](#-30-second-quickstart) · [🧭 Task Router](#-find-what-you-need-in-5-seconds) · [🗺️ The Vault](#%EF%B8%8F-the-vault) · [🤖 Skills](#-ai-agent-skills) · [🔌 MCP](#-mcp--model-context-protocol) · [🎮 Playground](#-live-playground)**
 
@@ -25,7 +25,7 @@
 ---
 
 > ### 🎨 One repo to rule every color decision.
-> **No more 40-tab chaos.** Chroma Forge fuses the entire color universe — APIs, perceptual color spaces, WCAG/APCA accessibility math, scientific colormaps, design-system scales, AI palette generators, MCP servers — into **16 deep-dive guides**, **6 installable AI-agent skills**, and a **live playground**. Your AI agent becomes a color engineer; you become unreasonably fast at color.
+> **No more 40-tab chaos.** Chromary fuses the entire color universe — APIs, perceptual color spaces, WCAG/APCA accessibility math, scientific colormaps, design-system scales, AI palette generators, MCP servers — into **16 deep-dive guides**, **6 installable AI-agent skills**, and a **live playground**. Your AI agent becomes a color engineer; you become unreasonably fast at color.
 
 | 🧭 | 🤖 | 🧪 |
 |:---:|:---:|:---:|
@@ -39,15 +39,15 @@ Open [The Vault](#%EF%B8%8F-the-vault) → pick a guide → use its **🏆 TL;DR
 
 ### 🤖 AI agents — install the skills
 ```bash
-git clone https://github.com/izynu/chroma-forge.git
+git clone https://github.com/izynu/chromary.git
 mkdir -p .claude/skills
-cp -r chroma-forge/skills/* .claude/skills/
+cp -r chromary/skills/* .claude/skills/
 ```
 Works with Claude Code, Cursor, Windsurf and any `SKILL.md`-aware runtime. Global install: `~/.claude/skills/` instead.
 
 ### 🔌 MCP — give your agent live color tools
 ```bash
-cd chroma-forge/mcp/example-color-server
+cd chromary/mcp/example-color-server
 bun install && bun run index.ts
 ```
 
@@ -146,9 +146,9 @@ Give agents *live* color capabilities instead of memorized hex codes.
 // claude_desktop_config.json / .cursor/mcp.json
 {
   "mcpServers": {
-    "chroma-forge": {
+    "chromary": {
       "command": "bun",
-      "args": ["run", "/absolute/path/to/chroma-forge/mcp/example-color-server/index.ts"]
+      "args": ["run", "/absolute/path/to/chromary/mcp/example-color-server/index.ts"]
     }
   }
 }
@@ -179,7 +179,7 @@ Give agents *live* color capabilities instead of memorized hex codes.
 
 | | |
 |---|---|
-| <img src="assets/playground-hero.png" alt="Chroma Forge playground — palette generator and contrast checker" width="100%" /> | <img src="assets/playground-full.png" alt="Full Chroma Forge playground page" width="100%" /> |
+| <img src="assets/playground-hero.png" alt="Chromary playground — palette generator and contrast checker" width="100%" /> | <img src="assets/playground-full.png" alt="Full Chromary playground page" width="100%" /> |
 
 **Deploy your own copy free:** repo **Settings → Pages → Source: GitHub Actions** → the included [workflow](.github/workflows/pages.yml) publishes it automatically. ⚡ Or just open `web/index.html` locally — it works offline.
 
@@ -197,7 +197,7 @@ Give agents *live* color capabilities instead of memorized hex codes.
 <summary><b>🏗️ Repo map</b></summary>
 
 ```text
-chroma-forge/
+chromary/
 ├── README.md                 ← you are here
 ├── docs/                     ← 16 deep-dive guides (The Vault)
 ├── skills/                   ← 6 AI-agent skills (SKILL.md format)
@@ -230,11 +230,11 @@ Standing on the shoulders of giants: **Björn Ottosson** (OKLab/OKLCH), **Myndex
 
 ## ⭐ Star History
 
-<a href="https://star-history.com/#izynu/chroma-forge&Date">
+<a href="https://star-history.com/#izynu/chromary&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=izynu/chroma-forge&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=izynu/chromary&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=izynu/chromary&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=izynu/chromary&type=Date" />
  </picture>
 </a>
 
@@ -244,7 +244,7 @@ Standing on the shoulders of giants: **Björn Ottosson** (OKLab/OKLCH), **Myndex
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=110&color=0:f97316,50:ec4899,100:22c55e&section=footer" alt="wave divider" width="100%" />
 
-**🔥 CHROMA FORGE** — forged for humans, tuned for agents.
+**🎨 CHROMARY** — the armory of color. Built for humans, tuned for agents.
 
 Made with ⚡ by **[Zynu](https://github.com/izynu)** · *200+ tabs closed forever*
 

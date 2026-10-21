@@ -58,4 +58,4 @@ User: *"palette for a yoga studio, calm and premium"*
 → seed hue 170 (teal-green), analogic support at 150 & 195, chroma capped at 0.09, neutrals tinted with C 0.02 → output ramp `oklch(98% .012 170)` … `oklch(30% .05 170)`, accent `oklch(70% .1 85)` (warm sand), verified `text 30% on surface 98% = 12.8:1 ✅`.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dive: [08 · AI palette generation](../../docs/08-ai-palette-generation.md)*
+*Part of [🎨 Chromary](../../README.md) · deep dive: [08 · AI palette generation](../../docs/08-ai-palette-generation.md)*

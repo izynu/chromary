@@ -101,4 +101,4 @@ Grouped from first principles to final ship: foundations → spaces → measurem
 - [14 · Game & Pixel Palettes](14-game-and-pixel-palettes.md) — dithering and swatches, applied
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

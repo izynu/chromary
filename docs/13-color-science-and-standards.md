@@ -112,4 +112,4 @@ for (const [a, b] of pairs) {
 - [16 · Glossary](16-glossary.md) — ΔE, JND, gamut — the vocabulary, in plain English
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

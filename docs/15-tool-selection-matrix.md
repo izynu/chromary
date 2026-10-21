@@ -1,6 +1,6 @@
 # 🎯 Tool Selection Matrix
 
-> One giant table that routes any color task to its tool, its agent skill and its deep-dive guide — the map of the entire forge.
+> One giant table that routes any color task to its tool, its agent skill and its deep-dive guide — the map of the entire armory.
 
 **[⬅ Back to Index](../README.md)**
 
@@ -104,4 +104,4 @@
 - [16 · Glossary](16-glossary.md) — the vocabulary the tables assume
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

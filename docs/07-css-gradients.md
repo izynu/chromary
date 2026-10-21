@@ -118,4 +118,4 @@ The yellow → blue killer, fixed in one keyword — paste and compare:
 - [11 · Libraries & SDKs](11-libraries-and-sdks.md) — JS-side interpolation with culori/chroma.js
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*

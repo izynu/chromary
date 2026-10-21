@@ -49,4 +49,4 @@ From pixels to tokens: extract, normalize, and production-ize the colors hiding 
 Album art → `Vibrant #C2453C → oklch(56% 0.14 25)` clamped to `C 0.13`; `DarkVibrant` → surface; accent = hue 25+55 = 80 sand `oklch(75% 0.11 80)`; text `oklch(20% 0.02 25)` on surface = 11.9:1 ✓ → tokens emitted.
 
 ---
-*Part of [🔥 Chroma Forge](../../README.md) · deep dive: [10 · Image extraction](../../docs/10-image-color-extraction.md) · recipe: [image-palette.js](../../recipes/javascript/image-palette.js)*
+*Part of [🎨 Chromary](../../README.md) · deep dive: [10 · Image extraction](../../docs/10-image-color-extraction.md) · recipe: [image-palette.js](../../recipes/javascript/image-palette.js)*

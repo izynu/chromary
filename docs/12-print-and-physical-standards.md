@@ -106,4 +106,4 @@ curl "https://www.thecolorapi.com/id?hex=0EA5A0"
 - [15 · Tool Selection Matrix](15-tool-selection-matrix.md) — hex→Pantone is row 9
 
 ---
-*Part of [🔥 Chroma Forge](../README.md) — the ultimate color engineering toolkit.*
+*Part of [🎨 Chromary](../README.md) — the ultimate color engineering toolkit.*
