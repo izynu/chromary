@@ -170,7 +170,9 @@ Give agents *live* color capabilities instead of memorized hex codes.
 
 ## 🎮 Live Playground
 
-[`web/index.html`](web/index.html) is a **single self-contained file** — no build, no npm, no framework:
+The Pages site opens on a **warm-paper landing page** — [`web/index.html`](web/index.html): hero, the example UI palette the skill outputs, the Vault, recipes, examples and install steps.
+
+The interactive tools live in the **Chroma Lab** — [`web/lab.html`](web/lab.html), a **single self-contained file** (no build, no npm, no framework):
 
 - 🎲 Palette generator (analogic / complement / triadic / monochrome, click-to-copy swatches)
 - ♿ WCAG contrast checker with live AA/AAA verdicts
@@ -203,7 +205,7 @@ chromary/
 ├── skills/                   ← 6 AI-agent skills (SKILL.md format)
 ├── mcp/                      ← MCP registry + working example server
 ├── recipes/                  ← javascript/ · python/ · css/
-├── web/                      ← zero-dependency live playground
+├── web/                      ← landing page + zero-dependency Chroma Lab (lab.html)
 ├── assets/                   ← animated banner · playground screenshots
 └── .github/                  ← templates, funding, Pages workflow
 ```

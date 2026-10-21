@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chromary — Chroma Lab</title>
+<meta name="description" content="The zero-dependency playground for Chromary: palette generator, WCAG contrast checker, perceptual gradient gallery." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f97316'/%3E%3Cstop offset='.5' stop-color='%23ec4899'/%3E%3Cstop offset='1' stop-color='%2322c55e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg: #0b0d12;
+    --surface: #12151d;
+    --surface-2: #1a1e2a;
+    --border: #262b3a;
+    --text: #e8ecf4;
+    --text-dim: #98a2b8;
+    --accent-1: #f97316;
+    --accent-2: #ec4899;
+    --accent-3: #22c55e;
+    --accent-4: #14b8a6;
+    --radius: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 64px; }
+
+  /* ---------- header ---------- */
+  header {
+    padding: 56px 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .logo {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 28px; font-weight: 800; letter-spacing: .5px;
+  }
+  .hero { display: block; margin-bottom: 26px; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 44px rgba(0,0,0,.5); }
+  .hero img { width: 100%; display: block; }
+  .cta { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .cta a {
+    display: inline-flex; align-items: center; height: 40px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+    font-size: 14px; font-weight: 600; padding: 0 16px; text-decoration: none;
+    transition: border-color .15s, transform .1s;
+  }
+  .cta a:hover { border-color: #3b4257; transform: translateY(-1px); }
+  .cta a.primary {
+    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2));
+    border-color: transparent; color: #fff;
+  }
+  .logo-dot {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), #a855f7, var(--accent-3), var(--accent-4), var(--accent-1));
+    box-shadow: 0 0 24px #ec489955;
+  }
+  .grad-text {
+    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  header p.sub { color: var(--text-dim); max-width: 640px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    font-size: 12.5px; font-weight: 600; color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 4px 12px; background: var(--surface);
+  }
+  .badge b { color: var(--text); }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 48px; }
+  h2 { font-size: 21px; font-weight: 750; display: flex; align-items: center; gap: 10px; }
+  h2 .n {
+    font-size: 12px; font-weight: 700; color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 8px; padding: 2px 8px;
+    background: var(--surface);
+  }
+  section > p.desc { color: var(--text-dim); margin: 6px 0 18px; max-width: 680px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+  }
+
+  /* ---------- controls ---------- */
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .controls label { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+  input[type="color"] {
+    width: 46px; height: 40px; border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface-2); cursor: pointer; padding: 4px;
+  }
+  select, button.btn {
+    height: 40px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text);
+    font-size: 14px; font-weight: 600; padding: 0 14px; cursor: pointer;
+    transition: border-color .15s, transform .1s;
+  }
+  select:hover, button.btn:hover { border-color: #3b4257; }
+  button.btn:active { transform: scale(.97); }
+  button.btn.primary {
+    background: linear-gradient(in oklab, var(--accent-1), var(--accent-2));
+    border: none; color: #fff;
+  }
+  button.btn.ghost { background: transparent; }
+
+  /* ---------- palette ---------- */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-top: 18px; }
+  .swatch {
+    border-radius: 12px; overflow: hidden; cursor: pointer;
+    border: 1px solid var(--border); transition: transform .15s;
+    animation: rise .35s both;
+  }
+  .swatch:hover { transform: translateY(-3px); }
+  .swatch .chip { height: 84px; }
+  .swatch .meta { padding: 8px 10px; background: var(--surface-2); }
+  .swatch .hex { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; font-weight: 700; }
+  .swatch .name { font-size: 11px; color: var(--text-dim); text-transform: capitalize; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- contrast ---------- */
+  .contrast-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+  .row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .ratio-big { font-size: 44px; font-weight: 800; line-height: 1; }
+  .pill {
+    display: inline-block; font-size: 12.5px; font-weight: 700;
+    border-radius: 999px; padding: 4px 12px; margin: 4px 6px 0 0;
+    background: var(--surface-2); border: 1px solid var(--border);
+  }
+  .pill.pass { color: #4ade80; border-color: #14532d55; }
+  .pill.fail { color: #f87171; border-color: #7f1d1d55; }
+  .preview {
+    margin-top: 16px; border-radius: 12px; padding: 22px; border: 1px solid var(--border);
+  }
+  .preview .large { font-size: 24px; font-weight: 750; }
+  .preview .small { font-size: 14px; margin-top: 6px; }
+
+  /* ---------- gradients ---------- */
+  .grad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .grad-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+  .grad-card .band { height: 110px; }
+  .grad-card .foot { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; gap: 8px; }
+  .grad-card code {
+    font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--text-dim);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60%;
+  }
+  .grad-card button {
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+    font-size: 12px; font-weight: 600; border-radius: 8px; padding: 5px 10px; cursor: pointer;
+  }
+  .grad-card button:hover { border-color: #3b4257; }
+
+  /* ---------- skills ---------- */
+  .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .skill {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px; text-decoration: none; color: var(--text);
+    transition: transform .15s, border-color .15s;
+  }
+  .skill:hover { transform: translateY(-3px); border-color: #ec489966; }
+  .skill .icon { font-size: 24px; }
+  .skill h3 { font-size: 15px; margin: 8px 0 4px; }
+  .skill p { font-size: 12.5px; color: var(--text-dim); }
+
+  /* ---------- footer ---------- */
+  footer {
+    margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+    color: var(--text-dim); font-size: 13.5px;
+  }
+  footer a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #3b4257; }
+
+  /* ---------- toast ---------- */
+  #toast {
+    position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
+    background: #1c2230; color: var(--text); border: 1px solid #3b4257;
+    padding: 10px 18px; border-radius: 12px; font-size: 13.5px; font-weight: 600;
+    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+    box-shadow: 0 10px 30px #0008;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 720px) {
+    .contrast-grid { grid-template-columns: 1fr; }
+    header { padding-top: 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ HERO (animated banner) ============ -->
+  <a class="hero" href="https://github.com/izynu/chromary" target="_blank" rel="noopener" aria-label="Chromary on GitHub">
+    <img src="banner-animated.svg" alt="Chromary — the armory of color. The most complete color engineering toolkit for humans, designers and AI agents." />
+  </a>
+
+  <header>
+    <div class="logo"><span class="logo-dot"></span> <span class="grad-text">CHROMARY</span></div>
+    <p class="sub">Live playground — zero dependencies, zero build. A taste of the full toolkit: 200+ resources, 6 AI-agent skills, MCP server, recipes.</p>
+    <div class="badges">
+      <span class="badge"><b>200+</b> resources</span>
+      <span class="badge"><b>6</b> agent skills</span>
+      <span class="badge"><b>MCP</b> ready</span>
+      <span class="badge"><b>9</b> recipes</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/izynu/chromary" target="_blank" rel="noopener">⭐ Star Chromary on GitHub</a>
+      <a class="btn ghost" href="https://github.com/izynu/chromary#readme" target="_blank" rel="noopener">📖 Read the full README</a>
+    </div>
+  </header>
+
+  <!-- ============ 1 · PALETTE GENERATOR ============ -->
+  <section>
+    <h2><span class="n">01</span> 🎲 Palette Generator</h2>
+    <p class="desc">Pick a seed color and a harmony mode. Click any swatch to copy its hex. (Powered by color-theory math right here in your browser — the repo's skills do this plus WCAG gating.)</p>
+    <div class="card">
+      <div class="controls">
+        <label for="seed">Seed</label>
+        <input type="color" id="seed" value="#0ea5a0" />
+        <label for="mode">Harmony</label>
+        <select id="mode">
+          <option value="analogic">Analogic — calm</option>
+          <option value="complement">Complement — bold</option>
+          <option value="triadic">Triadic — playful</option>
+          <option value="monochrome">Monochrome — minimal</option>
+        </select>
+        <button class="btn primary" id="gen">✨ Generate</button>
+        <button class="btn ghost" id="rand">🎲 Random</button>
+      </div>
+      <div class="swatches" id="swatches"></div>
+    </div>
+  </section>
+
+  <!-- ============ 2 · CONTRAST CHECKER ============ -->
+  <section id="wcag">
+    <h2><span class="n">02</span> ♿ WCAG Contrast Checker</h2>
+    <p class="desc">Real WCAG 2.1 math, computed locally. Body text needs 4.5:1 (AA); large text and UI components need 3:1.</p>
+    <div class="card contrast-grid">
+      <div>
+        <div class="row"><label for="fg">Text</label><input type="color" id="fg" value="#1f2937" /><code id="fgHex" style="font-size:13px">#1f2937</code></div>
+        <div class="row"><label for="bg">Background</label><input type="color" id="bg" value="#f4f4f5" /><code id="bgHex" style="font-size:13px">#f4f4f5</code></div>
+        <div class="ratio-big" id="ratio">—</div>
+        <div>
+          <span class="pill" id="pillBody">AA body 4.5:1</span>
+          <span class="pill" id="pillLarge">AA large 3:1</span>
+          <span class="pill" id="pillAAA">AAA 7:1</span>
+        </div>
+      </div>
+      <div class="preview" id="preview">
+        <div class="large">Large heading preview</div>
+        <div class="small">Body text preview — the quick brown fox jumps over the lazy dog. 0123456789.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · GRADIENT GALLERY ============ -->
+  <section>
+    <h2><span class="n">03</span> 🌈 Perceptual Gradient Gallery</h2>
+    <p class="desc">Every gradient below interpolates in <code>oklab</code> / <code>oklch</code> — no gray dead zones. Copy the CSS straight into your project.</p>
+    <div class="grad-grid" id="gradGrid"></div>
+  </section>
+
+  <!-- ============ 4 · SKILLS ============ -->
+  <section>
+    <h2><span class="n">04</span> 🤖 Agent Skills</h2>
+    <p class="desc">This playground is the shallow end. The repo ships six installable <code>SKILL.md</code> skills that give AI agents expert color abilities.</p>
+    <div class="skill-grid" id="skillGrid"></div>
+  </section>
+
+  <footer>
+    <div>🎨 <b><a href="index.html" style="color:inherit;text-decoration:none">chromary</a></b> — the armory of color. Built for humans, tuned for agents.</div>
+    <div><a href="index.html">← Back to home</a> · <a href="https://github.com/izynu/chromary">GitHub repo</a> · <a href="https://github.com/izynu/chromary/blob/main/README.md">README</a> · <a href="https://github.com/izynu/chromary/blob/main/CONTRIBUTING.md">Contribute</a></div>
+  </footer>
+</div>
+
+<div id="toast" role="status" aria-live="polite">copied ✓</div>
+
+<script>
+"use strict";
+/* ================= utilities ================= */
+const $ = (s) => document.querySelector(s);
+const toastEl = $("#toast");
+let toastTimer;
+function toast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 1600);
+}
+async function copy(text) {
+  try { await navigator.clipboard.writeText(text); toast("copied ✓ " + text); }
+  catch { toast("copy failed — clipboard blocked"); }
+}
+function hexToRgb(hex) {
+  const h = hex.replace("#", "");
+  const n = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
+  return [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16));
+}
+function hslToHex(h, s, l) {
+  s /= 100; l /= 100;
+  const k = (n) => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  return "#" + [f(0), f(8), f(4)].map((v) => Math.round(v * 255).toString(16).padStart(2, "0")).join("");
+}
+const randomHue = () => Math.floor(Math.random() * 360);
+
+/* ================= 1 · palette ================= */
+const SCHEMES = {
+  analogic:   (h) => [h, h + 22, h - 22, h + 45, h - 45, h],
+  complement: (h) => [h, h, h + 180, h + 180, h + 15, h + 195],
+  triadic:    (h) => [h, h + 120, h + 240, h, h + 120, h + 240],
+  monochrome: (h) => [h, h, h, h, h, h],
+};
+const SLW = [ // [s, l] roles per slot
+  [62, 55], [70, 42], [75, 68], [45, 30], [55, 78], [85, 20],
+];
+const ROLES = ["primary", "deep", "tint", "anchor", "air", "ink"];
+
+function buildPalette() {
+  const seedHue = hexToRgb($("#seed").value);
+  const [r, g, b] = seedHue.map((v) => v / 255);
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  let hue = 0;
+  if (d) {
+    if (max === r) hue = ((g - b) / d) % 6;
+    else if (max === g) hue = (b - r) / d + 2;
+    else hue = (r - g) / d + 4;
+    hue = Math.round(hue * 60); if (hue < 0) hue += 360;
+  }
+  const hues = SCHEMES[$("#mode").value](hue);
+  renderSwatches(hues.map((h, i) => ({ hex: hslToHex((h + 360) % 360, SLW[i][0], SLW[i][1]), role: ROLES[i] })));
+}
+function renderSwatches(list) {
+  $("#swatches").innerHTML = "";
+  list.forEach((c, i) => {
+    const el = document.createElement("div");
+    el.className = "swatch";
+    el.style.animationDelay = i * 45 + "ms";
+    el.innerHTML = `<div class="chip" style="background:${c.hex}"></div>
+      <div class="meta"><div class="hex">${c.hex}</div><div class="name">${c.role}</div></div>`;
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-label", "copy " + c.hex);
+    el.addEventListener("click", () => copy(c.hex));
+    $("#swatches").appendChild(el);
+  });
+}
+$("#gen").addEventListener("click", buildPalette);
+$("#rand").addEventListener("click", () => {
+  $("#seed").value = hslToHex(randomHue(), 65, 50);
+  buildPalette();
+});
+$("#mode").addEventListener("change", buildPalette);
+$("#seed").addEventListener("input", buildPalette);
+
+/* ================= 2 · contrast ================= */
+function luminance(hex) {
+  const [r, g, b] = hexToRgb(hex).map((v) => {
+    const c = v / 255;
+    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+function ratio(fg, bg) {
+  const [hi, lo] = [luminance(fg), luminance(bg)].sort((a, b) => b - a);
+  return (hi + 0.05) / (lo + 0.05);
+}
+function pill(el, pass, label) {
+  el.textContent = (pass ? "✓ " : "✗ ") + label;
+  el.classList.toggle("pass", pass);
+  el.classList.toggle("fail", !pass);
+}
+function updateContrast() {
+  const fg = $("#fg").value, bg = $("#bg").value;
+  const r = ratio(fg, bg);
+  $("#fgHex").textContent = fg; $("#bgHex").textContent = bg;
+  $("#ratio").textContent = r.toFixed(2) + ":1";
+  pill($("#pillBody"), r >= 4.5, "AA body 4.5:1");
+  pill($("#pillLarge"), r >= 3, "AA large 3:1");
+  pill($("#pillAAA"), r >= 7, "AAA 7:1");
+  const p = $("#preview");
+  p.style.background = bg; p.style.color = fg; p.style.borderColor = fg + "33";
+}
+$("#fg").addEventListener("input", updateContrast);
+$("#bg").addEventListener("input", updateContrast);
+
+/* ================= 3 · gradients ================= */
+const GRADIENTS = [
+  { name: "Sunset no-mud", css: "linear-gradient(in oklab, oklch(75% 0.17 60), oklch(58% 0.2 330))" },
+  { name: "Teal→Violet sweep", css: "linear-gradient(in oklch longer hue, oklch(70% 0.15 180), oklch(60% 0.2 300))" },
+  { name: "Aurora", css: "linear-gradient(in oklab 120deg, oklch(65% 0.16 160), oklch(70% 0.14 240) 55%, oklch(75% 0.15 300))" },
+  { name: "Ember glow", css: "radial-gradient(in oklab at 30% 20%, oklch(80% 0.16 65 / .95), oklch(35% 0.1 30) 70%)" },
+  { name: "Cyan→Magenta", css: "linear-gradient(in oklab 90deg, oklch(72% 0.15 200), oklch(66% 0.22 350))" },
+  { name: "Full hue wheel", css: "conic-gradient(in oklch longer hue, oklch(70% 0.16 0), oklch(70% 0.16 360))" },
+];
+function renderGradients() {
+  $("#gradGrid").innerHTML = "";
+  GRADIENTS.forEach((g) => {
+    const el = document.createElement("div");
+    el.className = "grad-card";
+    el.innerHTML = `<div class="band" style="background:${g.css}"></div>
+      <div class="foot"><strong style="font-size:13px">${g.name}</strong></div>
+      <div class="foot" style="padding-top:0"><code>${g.css}</code><button>copy CSS</button></div>`;
+    el.querySelector("button").addEventListener("click", () => copy(g.css));
+    $("#gradGrid").appendChild(el);
+  });
+}
+
+/* ================= 4 · skills ================= */
+const SKILLS = [
+  { icon: "🎨", name: "palette-generator", desc: "Mood or seed → accessible, perceptually-uniform palette.", path: "skills/palette-generator/SKILL.md" },
+  { icon: "♿", name: "contrast-auditor", desc: "WCAG + APCA audit with minimal-distance auto-fix.", path: "skills/contrast-auditor/SKILL.md" },
+  { icon: "🏗️", name: "theme-builder", desc: "One color → full 50–950 scale + shadcn tokens.", path: "skills/theme-builder/SKILL.md" },
+  { icon: "📊", name: "dataviz-colormaps", desc: "Data type → scientifically correct colormap.", path: "skills/dataviz-colormaps/SKILL.md" },
+  { icon: "🌈", name: "gradient-smith", desc: "Perceptual gradients, zero gray dead zones.", path: "skills/gradient-smith/SKILL.md" },
+  { icon: "🖼️", name: "image-palette", desc: "Logo/photo → role-based brand tokens.", path: "skills/image-palette/SKILL.md" },
+];
+function renderSkills() {
+  $("#skillGrid").innerHTML = "";
+  SKILLS.forEach((s) => {
+    const a = document.createElement("a");
+    a.className = "skill";
+    a.href = "https://github.com/izynu/chromary/blob/main/" + s.path;
+    a.innerHTML = `<div class="icon">${s.icon}</div><h3>${s.name}</h3><p>${s.desc}</p>`;
+    $("#skillGrid").appendChild(a);
+  });
+}
+
+/* ================= boot ================= */
+buildPalette();
+updateContrast();
+renderGradients();
+renderSkills();
+</script>
+</body>
+</html>
